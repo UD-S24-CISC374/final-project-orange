@@ -1,6 +1,6 @@
 ---
 waltz:
-    title: EGDD Example - Index the Cat
+    title: EGDD Example - Cross the Pond
 meta:
     version: 0.0.3
     gdd authors:
@@ -14,6 +14,8 @@ meta:
 ---
 
 # Cross the Pond
+
+# Overview
 
 ## Elevator Pitch
 
