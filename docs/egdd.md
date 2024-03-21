@@ -1,21 +1,4 @@
----
-waltz:
-    title: EGDD Example - Cross the Pond
-meta:
-    version: 0.0.3
-    gdd authors:
-        - Kristina Balta <kbalta@udel.edu>
-        - Aesha Kothari <aeshak@udel.edu>
-    template authors:
-        - Austin Cory Bart <acbart@udel.edu>
-        - Mark Sheriff
-        - Alec Markarian
-        - Benjamin Stanley
----
-
 # Cross the Pond
-
-# Overview
 
 ## Elevator Pitch
 
