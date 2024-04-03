@@ -2,7 +2,9 @@ import Phaser from "phaser";
 
 export default class MainScene extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
-    private frogs?: Phaser.Physics.Arcade.StaticGroup;
+    private kid?: Phaser.Physics.Arcade.StaticGroup;
+    private mom?: Phaser.Physics.Arcade.StaticGroup;
+
     private score: number = 0;
     private scoreText?: Phaser.GameObjects.Text;
     constructor() {
@@ -19,9 +21,10 @@ export default class MainScene extends Phaser.Scene {
         let scaleY = this.cameras.main.height / image.height;
         let scale = Math.max(scaleX, scaleY);
         image.setScale(scale).setScrollFactor(0);
-        this.frogs = this.physics.add.staticGroup();
-        this.frogs.create(180, 550, "froghappy");
-        this.frogs.create(1000, 150, "froghappy");
+        let kid = this.add.image(180, 550, "froghappy");
+        let mom = this.add.image(1000, 150, "froghappy");
+        mom.setScale(2);
+        kid.setScale(1);
         const message = `Phaser v${Phaser.VERSION}`;
         this.add
             .text(this.cameras.main.width - 15, 15, message, {
