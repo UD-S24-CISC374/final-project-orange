@@ -21,6 +21,7 @@ export default class MainScene extends Phaser.Scene {
         image.setScale(scale).setScrollFactor(0);
         this.frogs = this.physics.add.staticGroup();
         this.frogs.create(180, 550, "froghappy");
+        this.frogs.create(1000, 150, "froghappy");
         const message = `Phaser v${Phaser.VERSION}`;
         this.add
             .text(this.cameras.main.width - 15, 15, message, {
