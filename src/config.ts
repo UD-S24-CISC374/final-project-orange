@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import MainScene from "./scenes/mainScene";
+import MainScene from "./scenes/level1";
 import PreloadScene from "./scenes/preloadScene";
 
 const DEFAULT_WIDTH = 1280;
@@ -9,7 +9,7 @@ export const CONFIG = {
     title: "My Untitled Phaser 3 Game",
     version: "0.0.1",
     type: Phaser.AUTO,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#000000",
     scale: {
         parent: "phaser-game",
         mode: Phaser.Scale.FIT,
