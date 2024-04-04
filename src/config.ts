@@ -9,7 +9,7 @@ export const CONFIG = {
     title: "My Untitled Phaser 3 Game",
     version: "0.0.1",
     type: Phaser.AUTO,
-    backgroundColor: "#000000",
+    backgroundColor: "#fff",
     scale: {
         parent: "phaser-game",
         mode: Phaser.Scale.FIT,

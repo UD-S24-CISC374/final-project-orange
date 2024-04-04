@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 
-export default class MainScene extends Phaser.Scene {
+export default class Level10 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private kid?: Phaser.Physics.Arcade.StaticGroup;
     private mom?: Phaser.Physics.Arcade.StaticGroup;
@@ -8,7 +8,7 @@ export default class MainScene extends Phaser.Scene {
     private score: number = 0;
     private scoreText?: Phaser.GameObjects.Text;
     constructor() {
-        super({ key: "MainScene" });
+        super({ key: "Level10" });
     }
 
     create() {
