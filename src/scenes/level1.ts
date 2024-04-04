@@ -1,4 +1,4 @@
-import { Linter } from "eslint";
+// import { Linter } from "eslint";
 import Phaser from "phaser";
 
 export default class Level1 extends Phaser.Scene {
