@@ -5,8 +5,6 @@ export default class Level8 extends Phaser.Scene {
     private kid?: Phaser.Physics.Arcade.StaticGroup;
     private mom?: Phaser.Physics.Arcade.StaticGroup;
 
-    private score: number = 0;
-    private scoreText?: Phaser.GameObjects.Text;
     constructor() {
         super({ key: "Level8" });
     }
@@ -25,20 +23,13 @@ export default class Level8 extends Phaser.Scene {
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2);
         kid.setScale(1);
-        const message = `Phaser v${Phaser.VERSION}`;
+        const message = `Level 8`;
         this.add
             .text(this.cameras.main.width - 15, 15, message, {
                 color: "#000000",
                 fontSize: "24px",
             })
             .setOrigin(1, 0);
-
-        this.input.keyboard?.createCursorKeys();
-        this.cursors = this.input.keyboard?.createCursorKeys();
-        this.scoreText = this.add.text(16, 16, "Score: " + this.score, {
-            fontSize: "32px",
-            color: "#000",
-        });
     }
 
     update() {}
