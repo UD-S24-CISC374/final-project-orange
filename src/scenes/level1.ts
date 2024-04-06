@@ -24,28 +24,38 @@ export default class Level1 extends Phaser.Scene {
         let scaleY = this.cameras.main.height / image.height;
         let scale = Math.max(scaleX, scaleY);
         image.setScale(scale).setScrollFactor(0);
-        let kid = this.add.image(180, 550, "froghappy");
+        let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
 
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x0000ea);
 
-        //  ST
+        //  PATH
         graphics.beginPath();
-        graphics.moveTo(600, 568);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(400, 300);
+        graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
         graphics.lineTo(600, 150);
-        graphics.closePath();
+        graphics.lineTo(400, 300);
+        graphics.lineTo(280, 150);
+        graphics.lineTo(400, 300);
+        graphics.lineTo(235, 415);
+        graphics.lineTo(400, 300);
+        graphics.lineTo(600, 450);
+        graphics.lineTo(800, 300);
+        graphics.lineTo(400, 300);
+        graphics.lineTo(600, 150);
+        graphics.lineTo(800, 300);
+        graphics.lineTo(900, 500);
+        graphics.lineTo(600, 450);
+        graphics.lineTo(800, 300);
+        graphics.lineTo(1000, 150);
+        graphics.lineTo(900, 500);
         graphics.strokePath();
-
-        //const line = new Phaser.Geom.Line(200, 300, 700, 100);
 
         this.lilypads = this.physics.add.staticGroup();
         const pads = this.lilypads.create(
             600,
-            568,
+            450,
             "lilypad"
         ) as Phaser.Physics.Arcade.Sprite;
         pads.setScale(0.5).refreshBody();
@@ -54,9 +64,7 @@ export default class Level1 extends Phaser.Scene {
         this.lilypads.create(280, 150, "lilypad").setScale(0.5).refreshBody();
         this.lilypads.create(400, 300, "lilypad").setScale(0.5).refreshBody();
         this.lilypads.create(600, 150, "lilypad").setScale(0.5).refreshBody();
-        this.add.line(0, 0, 600, 568, 800, 300, 0x006400, 1);
-
-        this.add.line(50, 50, 100, 100, 200, 200, 0xff0000);
+        this.lilypads.create(900, 500, "lilypad").setScale(0.5).refreshBody();
 
         mom.setScale(2);
         kid.setScale(1);
