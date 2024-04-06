@@ -56,32 +56,32 @@ export default class Level1 extends Phaser.Scene {
 
         this.l1 = this.add
             .sprite(600, 450, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(150)
             .setInteractive();
         this.l2 = this.add
             .sprite(800, 300, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(100)
             .setInteractive();
         this.l3 = this.add
             .sprite(280, 150, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(45)
             .setInteractive();
         this.l4 = this.add
             .sprite(400, 300, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(280)
             .setInteractive();
         this.l5 = this.add
             .sprite(600, 150, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(0)
             .setInteractive();
         this.l6 = this.add
             .sprite(900, 500, "lilypad")
-            .setScale(0.5)
+            .setScale(0.4)
             .setAngle(230)
             .setInteractive();
 
@@ -89,9 +89,8 @@ export default class Level1 extends Phaser.Scene {
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2);
         kid.setScale(1);
-        const message = `Level 1`;
         this.add
-            .text(this.cameras.main.width - 15, 15, message, {
+            .text(this.cameras.main.width - 15, 15, "Level 1", {
                 color: "#000000",
                 fontSize: "40px",
                 fontStyle: "bold",
@@ -99,21 +98,21 @@ export default class Level1 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(295, 130, "1", {
+            .text(285, 125, "1", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(615, 130, "2", {
+            .text(600, 130, "2", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(815, 280, "1", {
+            .text(815, 270, "1", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -121,21 +120,21 @@ export default class Level1 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(415, 280, "4", {
+            .text(415, 300, "4", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(615, 430, "2", {
+            .text(625, 430, "2", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(915, 480, "3", {
+            .text(920, 490, "3", {
                 color: "#ffffff",
                 fontSize: "35px",
                 fontStyle: "bold",
