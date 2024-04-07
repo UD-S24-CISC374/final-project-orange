@@ -37,14 +37,14 @@ export default class Level1 extends Phaser.Scene {
         graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
         graphics.lineTo(600, 150);
-        graphics.lineTo(400, 300);
+        graphics.lineTo(430, 300);
         graphics.lineTo(280, 150);
-        graphics.lineTo(400, 300);
+        graphics.lineTo(430, 300);
         graphics.lineTo(235, 415);
-        graphics.lineTo(400, 300);
+        graphics.lineTo(430, 300);
         graphics.lineTo(600, 450);
         graphics.lineTo(800, 300);
-        graphics.lineTo(400, 300);
+        graphics.lineTo(430, 300);
         graphics.lineTo(600, 150);
         graphics.lineTo(800, 300);
         graphics.lineTo(900, 500);
@@ -70,7 +70,7 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(45)
             .setInteractive();
         this.l4 = this.add
-            .sprite(400, 300, "lilypad")
+            .sprite(430, 300, "lilypad")
             .setScale(0.4)
             .setAngle(280)
             .setInteractive();
@@ -98,44 +98,93 @@ export default class Level1 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(285, 125, "1", {
-                color: "#ffffff",
+            .text(250, 270, "1", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(600, 130, "2", {
-                color: "#ffffff",
+            .text(430, 110, "2", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(815, 270, "1", {
-                color: "#ffffff",
+            .text(910, 180, "1", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
 
         this.add
-            .text(415, 300, "4", {
-                color: "#ffffff",
+            .text(340, 320, "4", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(625, 430, "2", {
-                color: "#ffffff",
+            .text(515, 380, "2", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(920, 490, "3", {
-                color: "#ffffff",
+            .text(750, 480, "3", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(380, 190, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(500, 200, "2", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(730, 195, "3", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(620, 260, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(705, 330, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(880, 390, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(950, 280, "2", {
+                color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
