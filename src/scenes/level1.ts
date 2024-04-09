@@ -3,15 +3,6 @@ import Phaser from "phaser";
 
 export default class Level1 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
-    private kid?: Phaser.Physics.Arcade.StaticGroup;
-    private mom?: Phaser.Physics.Arcade.StaticGroup;
-    private l1?: Phaser.GameObjects.Sprite;
-    private l2?: Phaser.GameObjects.Sprite;
-    private l3?: Phaser.GameObjects.Sprite;
-    private l4?: Phaser.GameObjects.Sprite;
-    private l5?: Phaser.GameObjects.Sprite;
-    private l6?: Phaser.GameObjects.Sprite;
-
     private score: number = 0;
     private scoreText?: Phaser.GameObjects.Text;
     constructor() {
@@ -54,36 +45,55 @@ export default class Level1 extends Phaser.Scene {
         graphics.lineTo(900, 500);
         graphics.strokePath();
 
-        this.l1 = this.add
-            .sprite(600, 450, "lilypad")
+        let l1 = this.add
+            .image(600, 450, "lilypad")
             .setScale(0.4)
             .setAngle(150)
-            .setInteractive();
-        this.l2 = this.add
-            .sprite(800, 300, "lilypad")
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l1.setScale(0.5))
+            .on("pointerout", () => l1.setScale(0.4));
+
+        let l2 = this.add
+            .image(800, 300, "lilypad")
             .setScale(0.4)
             .setAngle(100)
-            .setInteractive();
-        this.l3 = this.add
-            .sprite(280, 150, "lilypad")
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l2.setScale(0.5))
+            .on("pointerout", () => l2.setScale(0.4));
+        let l3 = this.add
+            .image(280, 150, "lilypad")
             .setScale(0.4)
             .setAngle(45)
-            .setInteractive();
-        this.l4 = this.add
-            .sprite(430, 300, "lilypad")
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l3.setScale(0.5))
+            .on("pointerout", () => l3.setScale(0.4));
+        let l4 = this.add
+            .image(430, 300, "lilypad")
             .setScale(0.4)
             .setAngle(280)
-            .setInteractive();
-        this.l5 = this.add
-            .sprite(600, 150, "lilypad")
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l4.setScale(0.5))
+            .on("pointerout", () => l4.setScale(0.4));
+        let l5 = this.add
+            .image(600, 150, "lilypad")
             .setScale(0.4)
             .setAngle(0)
-            .setInteractive();
-        this.l6 = this.add
-            .sprite(900, 500, "lilypad")
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l5.setScale(0.5))
+            .on("pointerout", () => l5.setScale(0.4));
+        let l6 = this.add
+            .image(900, 500, "lilypad")
             .setScale(0.4)
             .setAngle(230)
-            .setInteractive();
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l6.setScale(0.5))
+            .on("pointerout", () => l6.setScale(0.4));
 
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
