@@ -15,6 +15,7 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+
         let scaleX = this.cameras.main.width / image.width;
         let scaleY = this.cameras.main.height / image.height;
         let scale = Math.max(scaleX, scaleY);
@@ -53,7 +54,7 @@ export default class Level1 extends Phaser.Scene {
             .on("pointerdown", () => (this.score += 4))
             .on("pointerover", () => l1.setScale(0.5))
             .on("pointerout", () => l1.setScale(0.4));
-
+        //lilypads.push(l1);
         let l2 = this.add
             .image(800, 300, "lilypad")
             .setScale(0.4)
@@ -206,7 +207,33 @@ export default class Level1 extends Phaser.Scene {
             color: "#000",
             fontStyle: "bold",
         });
-    }
+        /*
+        const lilypads: Phaser.GameObjects.Image[] = [];
+        const lilypadData = [l1, l2, l3, l4, l5, l6];
+        lilypads.forEach((lilypad) => {
+            lilypad.setInteractive();
+            lilypad.on("pointerdown", () => {
+                this.score += parseInt(lilypad.getData("value"));
+                this.updateScoreText();
+            });
+            lilypads.push(l1);
+        });
+        this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
+            fontSize: "45px",
+            color: "#000",
+            fontStyle: "bold",
+        });
 
+       
+*/
+        this.input.keyboard?.on("keydown-SPACE", () => {
+            this.scene.start("Level2");
+        });
+    }
     update() {}
+    //   private updateScoreText() {
+    //      if (this.scoreText) {
+    //         this.scoreText.setText("Path Length: " + this.score);
+    //    }
+    // }
 }

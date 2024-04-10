@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 export default class PreloadScene extends Phaser.Scene {
+    private instructionsPopup!: Phaser.GameObjects.Container;
     constructor() {
         super({ key: "PreloadScene" });
     }
@@ -55,7 +56,8 @@ export default class PreloadScene extends Phaser.Scene {
         );
         instructions
             .setInteractive()
-            .on("pointerdown", () => this.scene.start("Level1"))
+            .on("pointerdown", () => this.showInstructionsPopup())
+            //.on("pointerdown", () => this.scene.start("Level1"))
             .on("pointerover", () => instructions.setScale(1.1))
             .on("pointerout", () => instructions.setScale(1));
         start
@@ -67,6 +69,58 @@ export default class PreloadScene extends Phaser.Scene {
         this.add.image(this.cameras.main.centerX, 150, "frogcool").setScale(2);
         this.add.image(520, 390, "frogum");
         this.add.image(370, 465, "frogum");
+        this.instructionsPopup = this.createInstructionsPopup();
+        this.instructionsPopup.setVisible(false);
         // this.scene.start("Start");
+    }
+    private createInstructionsPopup(): Phaser.GameObjects.Container {
+        const background = this.add.rectangle(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2,
+            800,
+            600,
+            0xadd8e6
+        );
+        const instructionsText = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2,
+            "-Your mission is to guide the baby frog back to its mother by finding the shortest path across the pond.\n" +
+                "-As you navigate through the pond, you'll encounter a series of lilypads, each one representing a step.\n" +
+                "-Click on the lilypads strategically, selecting the route that minimizes the total distance traveled.\n" +
+                " -Let's hop to it!",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        instructionsText.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2 + 280,
+            "close",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        closeButton.setOrigin(0.5);
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => this.hideInstructionsPopup());
+
+        const popup = this.add.container();
+        popup.add(background);
+        popup.add(instructionsText);
+        popup.add(closeButton);
+        return popup;
+    }
+    private showInstructionsPopup(): void {
+        this.instructionsPopup.setVisible(true);
+    }
+    private hideInstructionsPopup(): void {
+        this.instructionsPopup.setVisible(false);
     }
 }
