@@ -51,16 +51,32 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(150)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                if (l1.x > 600) {
+                    this.score += 1;
+                } else {
+                    this.score += 4;
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l1.setScale(0.5))
             .on("pointerout", () => l1.setScale(0.4));
-        //lilypads.push(l1);
+
         let l2 = this.add
             .image(800, 300, "lilypad")
             .setScale(0.4)
             .setAngle(100)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                if (l2.x > 800) {
+                    this.score += 1;
+                } else {
+                    this.score += 3;
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l2.setScale(0.5))
             .on("pointerout", () => l2.setScale(0.4));
         let l3 = this.add
@@ -68,7 +84,15 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(45)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                if (l3.x > 280) {
+                    this.score += 1;
+                } else {
+                    this.score += 3;
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l3.setScale(0.5))
             .on("pointerout", () => l3.setScale(0.4));
         let l4 = this.add
@@ -76,7 +100,15 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(280)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                if (l4.x > 430) {
+                    this.score += 1;
+                } else {
+                    this.score += 3;
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l4.setScale(0.5))
             .on("pointerout", () => l4.setScale(0.4));
         let l5 = this.add
@@ -84,7 +116,15 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(0)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                if (l5.x > 600) {
+                    this.score += 1;
+                } else {
+                    this.score += 3;
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l5.setScale(0.5))
             .on("pointerout", () => l5.setScale(0.4));
         let l6 = this.add
@@ -93,10 +133,10 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(230)
             .setInteractive()
             .on("pointerdown", () => {
-                if (this.input.x > 700) {
-                    this.score += 1; // Example: adds 1 to the score for one path
+                if (l6.x > 900) {
+                    this.score += 1; // adds 1 to the score for one path
                 } else {
-                    this.score += 3; // Example: adds 3 to the score for another path
+                    this.score += 3; //adds 3 to the score for another path
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -214,30 +254,7 @@ export default class Level1 extends Phaser.Scene {
             .setOrigin(1, 0);
         this.input.keyboard?.createCursorKeys();
         this.cursors = this.input.keyboard?.createCursorKeys();
-        /*
-       this.scoreText = this.add.text(16, 16, "Path Length: " + this.score,
-        {
-            fontSize: "45px",
-            color: "#000",
-            fontStyle: "bold",
 
-        });
-*/
-        // const lilypads: Phaser.GameObjects.Image[] = [];
-        //const lilypadData = [l1, l2, l3, l4, l5, l6];
-        /*
-        lilypads.forEach((lilypad) => {
-            lilypad.setInteractive();
-            
-            lilypad.on("pointerdown", () => {
-                console.log("lilypad click");
-                this.score += parseInt(lilypad.getData("value"));
-                this.updateScoreText();
-            });
-            lilypads.push(l1);
-
-        });
-        */
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
             color: "#000",
