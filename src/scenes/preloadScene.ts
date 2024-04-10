@@ -56,7 +56,9 @@ export default class PreloadScene extends Phaser.Scene {
         );
         instructions
             .setInteractive()
-            .on("pointerdown", () => this.showInstructionsPopup())
+            .on("pointerdown", () => {
+                this.showInstructionsPopup();
+            })
             //.on("pointerdown", () => this.scene.start("Level1"))
             .on("pointerover", () => instructions.setScale(1.1))
             .on("pointerout", () => instructions.setScale(1));
@@ -109,7 +111,10 @@ export default class PreloadScene extends Phaser.Scene {
         );
         closeButton.setOrigin(0.5);
         closeButton.setInteractive();
-        closeButton.on("pointerdown", () => this.hideInstructionsPopup());
+        closeButton.on("pointerdown", () => {
+            this.hideInstructionsPopup();
+        });
+        // closeButton.on("pointerdown", () => this.hideInstructionsPopup());
 
         const popup = this.add.container();
         popup.add(background);
