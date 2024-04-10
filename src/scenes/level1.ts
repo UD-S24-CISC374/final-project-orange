@@ -215,8 +215,8 @@ export default class Level1 extends Phaser.Scene {
 
         });
 */
-        const lilypads: Phaser.GameObjects.Image[] = [];
-        const lilypadData = [l1, l2, l3, l4, l5, l6];
+        // const lilypads: Phaser.GameObjects.Image[] = [];
+        //const lilypadData = [l1, l2, l3, l4, l5, l6];
         /*
         lilypads.forEach((lilypad) => {
             lilypad.setInteractive();
