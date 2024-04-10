@@ -86,7 +86,7 @@ export default class PreloadScene extends Phaser.Scene {
         const instructionsText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "-Your mission is to guide the baby frog back to its mother by finding the shortest path across the pond.\n" +
+            "-Your mission is to guide the baby frog back to its mother.\n" +
                 "-As you navigate through the pond, you'll encounter many lilypads, each one representing a step.\n" +
                 "-Click on the lilypads strategically, selecting the route that minimizes the total distance traveled.\n" +
                 " -Let's hop to it!",

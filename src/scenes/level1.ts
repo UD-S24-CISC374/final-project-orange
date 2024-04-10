@@ -92,7 +92,11 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(230)
             .setInteractive()
-            .on("pointerdown", () => (this.score += 4))
+            .on("pointerdown", () => {
+                this.score += 4;
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
 
@@ -202,38 +206,39 @@ export default class Level1 extends Phaser.Scene {
             .setOrigin(1, 0);
         this.input.keyboard?.createCursorKeys();
         this.cursors = this.input.keyboard?.createCursorKeys();
-        this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
+        /*
+       this.scoreText = this.add.text(16, 16, "Path Length: " + this.score,
+        {
             fontSize: "45px",
             color: "#000",
             fontStyle: "bold",
+
         });
-        /*
+*/
         const lilypads: Phaser.GameObjects.Image[] = [];
         const lilypadData = [l1, l2, l3, l4, l5, l6];
+        /*
         lilypads.forEach((lilypad) => {
             lilypad.setInteractive();
+            
             lilypad.on("pointerdown", () => {
+                console.log("lilypad click");
                 this.score += parseInt(lilypad.getData("value"));
                 this.updateScoreText();
             });
             lilypads.push(l1);
+
         });
+        */
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
             color: "#000",
             fontStyle: "bold",
         });
 
-       
-*/
         this.input.keyboard?.on("keydown-SPACE", () => {
             this.scene.start("Level2");
         });
     }
     update() {}
-    //   private updateScoreText() {
-    //      if (this.scoreText) {
-    //         this.scoreText.setText("Path Length: " + this.score);
-    //    }
-    // }
 }
