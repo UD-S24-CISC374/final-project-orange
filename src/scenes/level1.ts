@@ -93,10 +93,18 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(230)
             .setInteractive()
             .on("pointerdown", () => {
-                this.score += 4;
+                if (this.input.x > 700) {
+                    this.score += 1; // Example: adds 1 to the score for one path
+                } else {
+                    this.score += 3; // Example: adds 3 to the score for another path
+                }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
+            // this.score += 4;
+            // console.log("click pad" + this.score);
+            // this.scoreText?.setText("Path Length: " + this.score);
+
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
 
