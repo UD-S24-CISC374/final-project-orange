@@ -19,7 +19,7 @@ export const CONFIG = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT,
     },
-    scene: [PreloadScene, MainScene, Level2],
+    scene: [PreloadScene, Level1, Level2],
     physics: {
         default: "arcade",
         arcade: {
