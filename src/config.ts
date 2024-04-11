@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import Level1 from "./scenes/level1";
-import MainScene from "./scenes/level1";
+
 import Level2 from "./scenes/level2";
 import PreloadScene from "./scenes/preloadScene";
 
