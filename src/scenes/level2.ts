@@ -81,7 +81,7 @@ export default class Level2 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    this.scene.start("Level2");
+                    this.scene.start("Level3");
                 }
             });
         kid.setScale(1);
@@ -437,7 +437,7 @@ export default class Level2 extends Phaser.Scene {
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 280,
-            "Level 2",
+            "Level 3",
             {
                 color: "#000",
                 fontSize: "24px",

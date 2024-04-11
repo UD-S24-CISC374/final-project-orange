@@ -73,6 +73,8 @@ export default class Level1 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 5) {
+                    ///// why doesnt this work //  this.showPassPopup();
+
                     this.scene.start("Level2");
                 }
             });
