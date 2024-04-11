@@ -1,9 +1,9 @@
+// import { Linter } from "eslint";
 import Phaser from "phaser";
 
 export default class Level2 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
-    private mom?: Phaser.Physics.Arcade.StaticGroup;
     private scoreText?: Phaser.GameObjects.Text;
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
@@ -18,24 +18,16 @@ export default class Level2 extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+
         let scaleX = this.cameras.main.width / image.width;
         let scaleY = this.cameras.main.height / image.height;
         let scale = Math.max(scaleX, scaleY);
         image.setScale(scale).setScrollFactor(0);
-        const restart = this.add.text(1260, 60, "Restart", {
-            color: "#000",
-            fontSize: "35px",
-            fontStyle: "bold",
-        });
-        restart.setOrigin(1, 0).setInteractive();
-        restart.on("pointerdown", () => {
-            this.score = 0;
-            this.scene.start("Level2");
-        });
 
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x000000);
 
+        //  PATH
         graphics.beginPath();
         graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
@@ -45,16 +37,12 @@ export default class Level2 extends Phaser.Scene {
         graphics.lineTo(430, 300);
         graphics.lineTo(235, 415);
         graphics.lineTo(430, 300);
-        graphics.lineTo(600, 450);
         graphics.lineTo(800, 300);
         graphics.lineTo(430, 300);
         graphics.lineTo(600, 150);
         graphics.lineTo(800, 300);
-        graphics.lineTo(900, 500);
-        graphics.lineTo(600, 450);
         graphics.lineTo(800, 300);
         graphics.lineTo(1000, 150);
-        graphics.lineTo(900, 500);
         graphics.strokePath();
 
         let kid = this.add.image(235, 415, "froghappy");
@@ -76,41 +64,16 @@ export default class Level2 extends Phaser.Scene {
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
-                if (this.score > 4) {
+                if (this.score > 5) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
-                } else if (this.score == 4) {
+                } else if (this.score == 5) {
+                    ///// why doesnt this work //  this.showPassPopup();
+
                     this.scene.start("Level3");
                 }
             });
         kid.setScale(1);
-
-        let l1 = this.add
-            .image(600, 450, "lilypad")
-            .setScale(0.4)
-            .setAngle(150)
-            .setInteractive()
-            .on("pointerdown", () => {
-                if (kid.x == 430) {
-                    this.score += 2;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 900) {
-                    this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                } else {
-                    //  l1.setTint(0xff00ff);
-                    // l1.clearTint();
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            .on("pointerover", () => l1.setScale(0.5))
-            .on("pointerout", () => l1.setScale(0.4));
 
         let l2 = this.add
             .image(800, 300, "lilypad")
@@ -119,7 +82,7 @@ export default class Level2 extends Phaser.Scene {
             .setInteractive()
             .on("pointerdown", () => {
                 if (kid.x == 600 && kid.y == 150) {
-                    this.score += 3;
+                    this.score += 1;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
                 if (kid.x == 600 && kid.y == 450) {
@@ -139,6 +102,7 @@ export default class Level2 extends Phaser.Scene {
             })
             .on("pointerover", () => l2.setScale(0.5))
             .on("pointerout", () => l2.setScale(0.4));
+
         let l3 = this.add
             .image(280, 150, "lilypad")
             .setScale(0.4)
@@ -151,7 +115,7 @@ export default class Level2 extends Phaser.Scene {
                     this.score += 1;
                 }
                 if (kid.x == 430) {
-                    this.score += 1;
+                    this.score += 3;
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
                 }
                 if (kid.x == 600 && kid.y == 150) {
@@ -163,6 +127,7 @@ export default class Level2 extends Phaser.Scene {
             })
             .on("pointerover", () => l3.setScale(0.5))
             .on("pointerout", () => l3.setScale(0.4));
+
         let l4 = this.add
             .image(430, 300, "lilypad")
             .setScale(0.4)
@@ -174,7 +139,7 @@ export default class Level2 extends Phaser.Scene {
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
                 if (kid.x == 280) {
-                    this.score += 1;
+                    this.score += 3;
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
                 if (kid.x == 600 && kid.y == 150) {
@@ -194,6 +159,7 @@ export default class Level2 extends Phaser.Scene {
             })
             .on("pointerover", () => l4.setScale(0.5))
             .on("pointerout", () => l4.setScale(0.4));
+
         let l5 = this.add
             .image(600, 150, "lilypad")
             .setScale(0.4)
@@ -217,30 +183,6 @@ export default class Level2 extends Phaser.Scene {
             })
             .on("pointerover", () => l5.setScale(0.5))
             .on("pointerout", () => l5.setScale(0.4));
-        let l6 = this.add
-            .image(900, 500, "lilypad")
-            .setScale(0.4)
-            .setAngle(230)
-            .setInteractive()
-            .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 3;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            // this.score += 4;
-            // console.log("click pad" + this.score);
-            // this.scoreText?.setText("Path Length: " + this.score);
-
-            .on("pointerover", () => l6.setScale(0.5))
-            .on("pointerout", () => l6.setScale(0.4));
-
         this.failPopup = this.createFailPopup();
         this.failPopup.setVisible(false);
         this.passPopup = this.createPassPopup();
@@ -253,6 +195,17 @@ export default class Level2 extends Phaser.Scene {
             })
             .setOrigin(1, 0);
 
+        const restart = this.add.text(1260, 60, "Restart", {
+            color: "#000",
+            fontSize: "35px",
+            fontStyle: "bold",
+        });
+        restart.setOrigin(1, 0).setInteractive();
+        restart.on("pointerdown", () => {
+            this.score = 0;
+            this.scene.start("Level2");
+        });
+
         this.add
             .text(250, 270, "1", {
                 color: "#000",
@@ -260,6 +213,7 @@ export default class Level2 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+
         this.add
             .text(430, 110, "2", {
                 color: "#000",
@@ -283,26 +237,13 @@ export default class Level2 extends Phaser.Scene {
             })
             .setOrigin(1, 0);
         this.add
-            .text(515, 380, "2", {
+            .text(380, 190, "3", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.add
-            .text(750, 480, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(380, 190, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
+
         this.add
             .text(500, 200, "2", {
                 color: "#000",
@@ -310,36 +251,17 @@ export default class Level2 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+
         this.add
-            .text(730, 195, "3", {
+            .text(730, 195, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+
         this.add
             .text(620, 260, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(705, 330, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(880, 390, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(950, 280, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -432,7 +354,6 @@ export default class Level2 extends Phaser.Scene {
             }
         );
         PassText.setOrigin(0.5);
-        //close button
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 280,
