@@ -12,12 +12,6 @@ export default class Level3 extends Phaser.Scene {
         super({ key: "Level3" });
     }
 
-    preload() {
-        this.load.image("frogBackground", "assets/bg.png");
-        this.load.image("froghappy", "assets/faces/glad.png");
-        this.load.image("lilypad", "assets/newLilypad.png");
-    }
-
     create() {
         let image = this.add.image(
             this.cameras.main.width / 2,
@@ -36,7 +30,7 @@ export default class Level3 extends Phaser.Scene {
         restart.setOrigin(1, 0).setInteractive();
         restart.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level3");
+            this.scene.start("Level3");
         });
 
         const graphics = this.add.graphics();
@@ -87,7 +81,7 @@ export default class Level3 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    this.scene.launch("Level4");
+                    this.scene.start("Level4");
                 }
             });
         kid.setScale(1);
@@ -397,7 +391,7 @@ export default class Level3 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level3");
+            this.scene.start("Level3");
         });
 
         const popup = this.add.container();
@@ -451,7 +445,7 @@ export default class Level3 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level4");
+            this.scene.start("Level4");
         });
 
         const popup = this.add.container();

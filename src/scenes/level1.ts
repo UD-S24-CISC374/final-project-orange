@@ -75,7 +75,7 @@ export default class Level1 extends Phaser.Scene {
                 if (this.score == 5) {
                     ///// why doesnt this work //  this.showPassPopup();
 
-                    this.scene.launch("Level2");
+                    this.scene.start("Level2");
                 }
             });
         kid.setScale(1);
@@ -261,7 +261,7 @@ export default class Level1 extends Phaser.Scene {
         restart.setOrigin(1, 0).setInteractive();
         restart.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level1");
+            this.scene.start("Level1");
         });
 
         this.add
@@ -415,7 +415,7 @@ export default class Level1 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level1");
+            this.scene.start("Level1");
         });
 
         const popup = this.add.container();
@@ -469,7 +469,7 @@ export default class Level1 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.launch("Level2");
+            this.scene.start("Level2");
         });
 
         const popup = this.add.container();
