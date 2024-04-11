@@ -231,7 +231,22 @@ export default class Level2 extends Phaser.Scene {
 
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
-
+        let l7 = this.add
+            .image(800, 150, "lilypad")
+            .setScale(0.4)
+            .setAngle(0)
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l5.setScale(0.5))
+            .on("pointerout", () => l5.setScale(0.4));
+        let l8 = this.add
+            .image(600, 600, "lilypad")
+            .setScale(0.4)
+            .setAngle(0)
+            .setInteractive()
+            .on("pointerdown", () => (this.score += 4))
+            .on("pointerover", () => l5.setScale(0.5))
+            .on("pointerout", () => l5.setScale(0.4));
         this.failPopup = this.createFailPopup();
         this.failPopup.setVisible(false);
         this.passPopup = this.createPassPopup();
