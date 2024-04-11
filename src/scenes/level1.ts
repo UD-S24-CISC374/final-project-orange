@@ -251,6 +251,17 @@ export default class Level1 extends Phaser.Scene {
             })
             .setOrigin(1, 0);
 
+        const restart = this.add.text(1260, 60, "Restart", {
+            color: "#000",
+            fontSize: "35px",
+            fontStyle: "bold",
+        });
+        restart.setOrigin(1, 0).setInteractive();
+        restart.on("pointerdown", () => {
+            this.score = 0;
+            this.scene.start("Level1");
+        });
+
         this.add
             .text(250, 270, "1", {
                 color: "#000",

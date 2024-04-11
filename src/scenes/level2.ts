@@ -22,6 +22,16 @@ export default class Level2 extends Phaser.Scene {
         let scaleY = this.cameras.main.height / image.height;
         let scale = Math.max(scaleX, scaleY);
         image.setScale(scale).setScrollFactor(0);
+        const restart = this.add.text(1260, 60, "Restart", {
+            color: "#000",
+            fontSize: "35px",
+            fontStyle: "bold",
+        });
+        restart.setOrigin(1, 0).setInteractive();
+        restart.on("pointerdown", () => {
+            this.score = 0;
+            this.scene.start("Level2");
+        });
 
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x000000);
