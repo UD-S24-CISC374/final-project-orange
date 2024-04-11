@@ -1,13 +1,10 @@
 import Phaser from "phaser";
 
 export default class Level3 extends Phaser.Scene {
-    private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
-    private mom?: Phaser.Physics.Arcade.StaticGroup;
     private scoreText?: Phaser.GameObjects.Text;
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
-    private kid!: Phaser.GameObjects.Image;
     constructor() {
         super({ key: "Level3" });
     }
@@ -343,8 +340,6 @@ export default class Level3 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.input.keyboard?.createCursorKeys();
-        this.cursors = this.input.keyboard?.createCursorKeys();
 
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
