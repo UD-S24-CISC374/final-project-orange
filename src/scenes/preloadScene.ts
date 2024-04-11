@@ -11,7 +11,7 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.image("froghappy", "assets/faces/glad.png");
         this.load.image("lilypad", "assets/newLilypad.png");
         this.load.image("start", "assets/start.png");
-        this.load.image("instructions", "instructions/newLilypad.png");
+        this.load.image("instructions", "assets/newLilypad.png");
         this.load.image("frogcool", "assets/faces/cool.png");
         this.load.image("frogum", "assets/faces/um.png");
     }
@@ -59,7 +59,6 @@ export default class PreloadScene extends Phaser.Scene {
             .on("pointerdown", () => {
                 this.showInstructionsPopup();
             })
-            //.on("pointerdown", () => this.scene.start("Level1"))
             .on("pointerover", () => instructions.setScale(1.1))
             .on("pointerout", () => instructions.setScale(1));
         start

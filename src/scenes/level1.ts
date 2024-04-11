@@ -5,6 +5,9 @@ export default class Level1 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
     private scoreText?: Phaser.GameObjects.Text;
+    private failPopup!: Phaser.GameObjects.Container;
+    private passPopup!: Phaser.GameObjects.Container;
+    private kid!: Phaser.GameObjects.Image;
     constructor() {
         super({ key: "Level1" });
     }
@@ -46,16 +49,55 @@ export default class Level1 extends Phaser.Scene {
         graphics.lineTo(900, 500);
         graphics.strokePath();
 
+        let kid = this.add.image(235, 415, "froghappy");
+        let mom = this.add.image(1000, 150, "froghappy");
+        mom.setScale(2)
+            .setInteractive()
+            .on("pointerdown", () => {
+                if (kid.x == 800) {
+                    this.score += 1;
+                    kid.setX(mom.x + 10)
+                        .setY(mom.y + 10)
+                        .setDepth(1);
+                }
+                if (kid.x == 900) {
+                    this.score += 2;
+                    kid.setX(mom.x + 10)
+                        .setY(mom.y + 10)
+                        .setDepth(1);
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+                if (this.score > 4) {
+                    image.setTint(0xff0000);
+                    this.showFailPopup();
+                }
+                if (this.score == 4) {
+                    this.scene.start("Level2");
+                }
+            });
+        kid.setScale(1);
+
         let l1 = this.add
             .image(600, 450, "lilypad")
             .setScale(0.4)
             .setAngle(150)
             .setInteractive()
             .on("pointerdown", () => {
-                if (l1.x > 600) {
+                if (kid.x == 430) {
+                    this.score += 2;
+                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                }
+                if (kid.x == 800) {
                     this.score += 1;
+                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                }
+                if (kid.x == 900) {
+                    this.score += 3;
+                    kid.setX(l1.x).setY(l1.y).setDepth(1);
                 } else {
-                    this.score += 4;
+                    //  l1.setTint(0xff00ff);
+                    // l1.clearTint();
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -69,10 +111,21 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(100)
             .setInteractive()
             .on("pointerdown", () => {
-                if (l2.x > 800) {
-                    this.score += 1;
-                } else {
+                if (kid.x == 600 && kid.y == 150) {
                     this.score += 3;
+                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                }
+                if (kid.x == 600 && kid.y == 450) {
+                    this.score += 1;
+                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                }
+                if (kid.x == 430) {
+                    this.score += 1;
+                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                }
+                if (kid.x == 900) {
+                    this.score += 1;
+                    kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -84,11 +137,19 @@ export default class Level1 extends Phaser.Scene {
             .setScale(0.4)
             .setAngle(45)
             .setInteractive()
+            .setDepth(0)
             .on("pointerdown", () => {
-                if (l3.x > 280) {
+                if (kid.x == 235) {
+                    kid.setX(l3.x).setY(l3.y).setDepth(1);
                     this.score += 1;
-                } else {
-                    this.score += 3;
+                }
+                if (kid.x == 430) {
+                    this.score += 1;
+                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                }
+                if (kid.x == 600 && kid.y == 150) {
+                    this.score += 2;
+                    kid.setX(l3.x).setY(l3.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -101,10 +162,25 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(280)
             .setInteractive()
             .on("pointerdown", () => {
-                if (l4.x > 430) {
+                if (kid.x == 235) {
+                    this.score += 4;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                }
+                if (kid.x == 280) {
                     this.score += 1;
-                } else {
-                    this.score += 3;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                }
+                if (kid.x == 600 && kid.y == 150) {
+                    this.score += 2;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                }
+                if (kid.x == 600 && kid.y == 450) {
+                    this.score += 2;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                }
+                if (kid.x == 800) {
+                    this.score += 1;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -117,10 +193,17 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(0)
             .setInteractive()
             .on("pointerdown", () => {
-                if (l5.x > 600) {
-                    this.score += 1;
-                } else {
+                if (kid.x == 280) {
+                    this.score += 2;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 430) {
+                    this.score += 2;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 800) {
                     this.score += 3;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -133,10 +216,13 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(230)
             .setInteractive()
             .on("pointerdown", () => {
-                if (l6.x > 900) {
-                    this.score += 1; // adds 1 to the score for one path
-                } else {
-                    this.score += 3; //adds 3 to the score for another path
+                if (kid.x == 600 && kid.y == 450) {
+                    this.score += 3;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                }
+                if (kid.x == 800) {
+                    this.score += 1;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -147,11 +233,10 @@ export default class Level1 extends Phaser.Scene {
 
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
-
-        let kid = this.add.image(235, 415, "froghappy");
-        let mom = this.add.image(1000, 150, "froghappy");
-        mom.setScale(2);
-        kid.setScale(1);
+        this.failPopup = this.createFailPopup();
+        this.failPopup.setVisible(false);
+        this.passPopup = this.createPassPopup();
+        this.passPopup.setVisible(false);
         this.add
             .text(this.cameras.main.width - 15, 15, "Level 1", {
                 color: "#000000",
@@ -260,10 +345,115 @@ export default class Level1 extends Phaser.Scene {
             color: "#000",
             fontStyle: "bold",
         });
+    }
+    private createFailPopup(): Phaser.GameObjects.Container {
+        const background = this.add
+            .rectangle(
+                this.cameras.main.width / 2,
+                this.cameras.main.height / 2,
+                800,
+                600,
+                0xadd8e6
+            )
+            .setDepth(1);
+        const failText = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2,
+            "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n" +
+                "Don't be discouraged, try again!\n" +
+                "Let's hop to it!",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        failText.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2 + 280,
+            "Retry",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        closeButton.setOrigin(0.5);
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => {
+            this.score = 0;
+            this.scene.start("Level1");
+        });
 
-        this.input.keyboard?.on("keydown-SPACE", () => {
+        const popup = this.add.container();
+        popup.add(background).setDepth(1);
+        popup.add(failText);
+        popup.add(closeButton);
+        return popup;
+    }
+    private showFailPopup(): void {
+        this.failPopup.setVisible(true);
+    }
+    private hideFailPopup(): void {
+        this.failPopup.setVisible(false);
+    }
+    private createPassPopup(): Phaser.GameObjects.Container {
+        const background = this.add
+            .rectangle(
+                this.cameras.main.width / 2,
+                this.cameras.main.height / 2,
+                800,
+                600,
+                0xadd8e6
+            )
+            .setDepth(1);
+        const PassText = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2,
+            "Congratulation! You united the baby frog with its mother along the shortest path!\n" +
+                "Ready for more of a challenge? Try the next level!\n" +
+                "Let's hop to it!",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        PassText.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2 + 280,
+            "Level 2",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        closeButton.setOrigin(0.5);
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => {
+            this.score = 0;
             this.scene.start("Level2");
         });
+
+        const popup = this.add.container();
+        popup.add(background).setDepth(1);
+        popup.add(PassText);
+        popup.add(closeButton);
+        return popup;
     }
+    private showPassPopup(): void {
+        this.failPopup.setVisible(true);
+    }
+    private hidePassPopup(): void {
+        this.failPopup.setVisible(false);
+    }
+
     update() {}
 }
