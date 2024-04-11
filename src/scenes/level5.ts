@@ -1,13 +1,10 @@
 import Phaser from "phaser";
 
 export default class Level5 extends Phaser.Scene {
-    private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
-    private mom?: Phaser.Physics.Arcade.StaticGroup;
     private scoreText?: Phaser.GameObjects.Text;
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
-    private kid!: Phaser.GameObjects.Image;
     constructor() {
         super({ key: "Level5" });
     }
@@ -39,22 +36,7 @@ export default class Level5 extends Phaser.Scene {
         graphics.beginPath();
         graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(235, 415);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(900, 500);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(1000, 150);
-        graphics.lineTo(900, 500);
+
         graphics.strokePath();
 
         let kid = this.add.image(235, 415, "froghappy");
@@ -81,7 +63,8 @@ export default class Level5 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    this.scene.start("Level6");
+                    //this.scene.start("Level6");
+                    this.showPassPopup();
                 }
             });
         kid.setScale(1);
@@ -235,10 +218,6 @@ export default class Level5 extends Phaser.Scene {
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
-            // this.score += 4;
-            // console.log("click pad" + this.score);
-            // this.scoreText?.setText("Path Length: " + this.score);
-
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
 
@@ -261,93 +240,6 @@ export default class Level5 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.add
-            .text(430, 110, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(910, 180, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-
-        this.add
-            .text(340, 320, "4", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(515, 380, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(750, 480, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(380, 190, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(500, 200, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(730, 195, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(620, 260, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(705, 330, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(880, 390, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(950, 280, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.input.keyboard?.createCursorKeys();
-        this.cursors = this.input.keyboard?.createCursorKeys();
 
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
@@ -422,7 +314,7 @@ export default class Level5 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulation! You united the baby frog with its mother along the shortest path!\n" +
+            "Congratulations! You united the baby frog with its mother along the shortest path!\n" +
                 "Ready for more of a challenge? Try the next level!\n" +
                 "Let's hop to it!",
             {
@@ -458,10 +350,10 @@ export default class Level5 extends Phaser.Scene {
         return popup;
     }
     private showPassPopup(): void {
-        this.failPopup.setVisible(true);
+        this.passPopup.setVisible(true);
     }
     private hidePassPopup(): void {
-        this.failPopup.setVisible(false);
+        this.passPopup.setVisible(false);
     }
 
     update() {}

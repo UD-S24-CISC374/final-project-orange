@@ -61,9 +61,7 @@ export default class Level1 extends Phaser.Scene {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 } else if (this.score == 3) {
-                    ///// why doesnt this work //  this.showPassPopup();
-
-                    this.scene.start("Level2");
+                    this.showPassPopup();
                 }
             });
         kid.setScale(1);
@@ -248,7 +246,7 @@ export default class Level1 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulation! You united the baby frog with its mother along the shortest path!\n" +
+            "Congratulations! You united the baby frog with its mother along the shortest path!\n" +
                 "Ready for more of a challenge? Try the next level!\n" +
                 "Let's hop to it!",
             {
@@ -283,10 +281,10 @@ export default class Level1 extends Phaser.Scene {
         return popup;
     }
     private showPassPopup(): void {
-        this.failPopup.setVisible(true);
+        this.passPopup.setVisible(true);
     }
     private hidePassPopup(): void {
-        this.failPopup.setVisible(false);
+        this.passPopup.setVisible(false);
     }
 
     update() {}

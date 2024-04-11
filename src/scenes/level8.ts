@@ -81,7 +81,7 @@ export default class Level8 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    this.scene.start("Level9");
+                    this.showPassPopup();
                 }
             });
         kid.setScale(1);
@@ -422,7 +422,7 @@ export default class Level8 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulation! You united the baby frog with its mother along the shortest path!\n" +
+            "Congratulations! You united the baby frog with its mother along the shortest path!\n" +
                 "Ready for more of a challenge? Try the next level!\n" +
                 "Let's hop to it!",
             {
@@ -458,10 +458,10 @@ export default class Level8 extends Phaser.Scene {
         return popup;
     }
     private showPassPopup(): void {
-        this.failPopup.setVisible(true);
+        this.passPopup.setVisible(true);
     }
     private hidePassPopup(): void {
-        this.failPopup.setVisible(false);
+        this.passPopup.setVisible(false);
     }
 
     update() {}

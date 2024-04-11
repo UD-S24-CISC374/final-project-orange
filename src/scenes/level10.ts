@@ -81,7 +81,7 @@ export default class Level10 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    //  this.scene.start("Level10");
+                    this.showPassPopup();
                 }
             });
         kid.setScale(1);
@@ -422,9 +422,9 @@ export default class Level10 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulation! You united the baby frog with its mother along the shortest path!\n" +
-                "Ready for more of a challenge? Try the next level!\n" +
-                "Let's hop to it!",
+            "Congratulations!\n\nYou united the baby frog with its mother along the shortest path and completed the game!\n" +
+                "Want to play again?\n\n" +
+                "Nice hopping!",
             {
                 color: "#000",
                 fontSize: "24px",
@@ -437,7 +437,7 @@ export default class Level10 extends Phaser.Scene {
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 280,
-            "Level 10",
+            "Level 1",
             {
                 color: "#000",
                 fontSize: "24px",
@@ -448,7 +448,7 @@ export default class Level10 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.start("Level10");
+            this.scene.start("Level1");
         });
 
         const popup = this.add.container();
@@ -458,10 +458,10 @@ export default class Level10 extends Phaser.Scene {
         return popup;
     }
     private showPassPopup(): void {
-        this.failPopup.setVisible(true);
+        this.passPopup.setVisible(true);
     }
     private hidePassPopup(): void {
-        this.failPopup.setVisible(false);
+        this.passPopup.setVisible(false);
     }
 
     update() {}
