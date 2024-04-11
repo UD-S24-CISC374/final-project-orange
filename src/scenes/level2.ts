@@ -79,8 +79,7 @@ export default class Level2 extends Phaser.Scene {
                 if (this.score > 4) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
-                }
-                if (this.score <= 4) {
+                } else if (this.score == 4) {
                     this.scene.start("Level3");
                 }
             });

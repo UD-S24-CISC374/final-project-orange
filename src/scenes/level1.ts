@@ -71,8 +71,7 @@ export default class Level1 extends Phaser.Scene {
                 if (this.score > 5) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
-                }
-                if (this.score == 5) {
+                } else if (this.score == 5) {
                     ///// why doesnt this work //  this.showPassPopup();
 
                     this.scene.start("Level2");
