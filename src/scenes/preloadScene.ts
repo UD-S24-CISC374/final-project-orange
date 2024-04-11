@@ -63,7 +63,7 @@ export default class PreloadScene extends Phaser.Scene {
             .on("pointerout", () => instructions.setScale(1));
         start
             .setInteractive()
-            .on("pointerdown", () => this.scene.start("Level1"))
+            .on("pointerdown", () => this.scene.launch("Level1"))
             .on("pointerover", () => start.setScale(1.1))
             .on("pointerout", () => start.setScale(1));
 
@@ -85,10 +85,10 @@ export default class PreloadScene extends Phaser.Scene {
         const instructionsText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "-Your mission is to guide the baby frog back to its mother.\n" +
-                "-As you navigate through the pond, you'll encounter many lilypads, each one representing a step.\n" +
-                "-Click on the lilypads strategically, selecting the route that minimizes the total distance traveled.\n" +
-                " -Let's hop to it!",
+            "Your mission is to guide the baby frog back to its mother.\n\n" +
+                "As you navigate through the pond, you'll encounter many lilypads, each one representing a step.\n\n" +
+                "Click on the lilypads strategically, selecting the route that minimizes the total distance traveled.\n\n" +
+                "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",

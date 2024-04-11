@@ -81,7 +81,7 @@ export default class Level2 extends Phaser.Scene {
                     this.showFailPopup();
                 }
                 if (this.score == 4) {
-                    this.scene.start("Level3");
+                    this.scene.launch("Level3");
                 }
             });
         kid.setScale(1);
