@@ -34,16 +34,20 @@ export default class Level3 extends Phaser.Scene {
         graphics.lineStyle(2, 0x000000);
 
         graphics.beginPath();
-        graphics.moveTo(235, 415);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(600, 150);
+        // graphics.moveTo(235, 415);
+        // graphics.lineTo(280, 150);
+        //graphics.lineTo(600, 150);
         graphics.lineTo(430, 300);
-        graphics.lineTo(280, 150);
+        graphics.lineTo(235, 415);
+        graphics.lineTo(180, 150);
+        //graphics.lineTo(280, 150);
+        //above
+
         graphics.lineTo(430, 300);
         graphics.lineTo(235, 415);
         graphics.lineTo(430, 300);
         graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
+        // graphics.lineTo(800, 300);
         graphics.lineTo(430, 300);
         graphics.lineTo(600, 150);
         graphics.lineTo(800, 300);
@@ -137,6 +141,7 @@ export default class Level3 extends Phaser.Scene {
             })
             .on("pointerover", () => l2.setScale(0.5))
             .on("pointerout", () => l2.setScale(0.4));
+        /*
         let l3 = this.add
             .image(280, 150, "lilypad")
             .setScale(0.4)
@@ -161,8 +166,9 @@ export default class Level3 extends Phaser.Scene {
             })
             .on("pointerover", () => l3.setScale(0.5))
             .on("pointerout", () => l3.setScale(0.4));
+            */
         let l4 = this.add
-            .image(430, 300, "lilypad")
+            .image(230, 150, "lilypad")
             .setScale(0.4)
             .setAngle(280)
             .setInteractive()
@@ -248,20 +254,23 @@ export default class Level3 extends Phaser.Scene {
             })
             .setOrigin(1, 0);
 
-        this.add
+        /*
+      //  this.add
             .text(250, 270, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.add
+           
+      //  this.add
             .text(430, 110, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+             
         this.add
             .text(910, 180, "1", {
                 color: "#000",
@@ -291,13 +300,15 @@ export default class Level3 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.add
+        
+     //   this.add
             .text(380, 190, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+            
         this.add
             .text(500, 200, "2", {
                 color: "#000",
@@ -340,7 +351,7 @@ export default class Level3 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-
+*/
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
             color: "#000",
