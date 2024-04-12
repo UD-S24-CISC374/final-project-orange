@@ -422,9 +422,8 @@ export default class Level10 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulations!\n\nYou united the baby frog with its mother along the shortest path and completed the game!\n" +
-                "Want to play again?\n\n" +
-                "Nice hopping!",
+            "Nice hopping!\n\nYou united the baby frog with its mother along the shortest path and completed the game!\n\n" +
+                "Want to play again?\n\n",
             {
                 color: "#000",
                 fontSize: "24px",

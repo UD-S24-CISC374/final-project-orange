@@ -422,8 +422,8 @@ export default class Level6 extends Phaser.Scene {
         const PassText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Congratulations! You united the baby frog with its mother along the shortest path!\n" +
-                "Ready for more of a challenge? Try the next level!\n" +
+            "Congratulations! \n\nYou united the baby frog with its mother along the shortest path!\n\n" +
+                "Ready for more of a challenge? Try the next level!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
