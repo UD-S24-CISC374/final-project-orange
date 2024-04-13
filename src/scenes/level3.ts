@@ -308,7 +308,7 @@ export default class Level3 extends Phaser.Scene {
             .setDepth(1);
         const failText = this.add.text(
             this.cameras.main.width / 2,
-            this.cameras.main.height / 2,
+            this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
                 "Don't be discouraged, try again!\n\n" +
                 "Let's hop to it!",
@@ -337,11 +337,25 @@ export default class Level3 extends Phaser.Scene {
             this.score = 0;
             this.scene.start("Level3");
         });
+        const sadMom = this.add
+            .image(
+                this.cameras.main.width / 2 - 100,
+                this.cameras.main.height / 2 - 180,
+                "lose"
+            )
+            .setScale(2);
+        const sadKid = this.add.image(
+            this.cameras.main.width / 2 + 100,
+            this.cameras.main.height / 2 - 160,
+            "lose"
+        );
 
         const popup = this.add.container();
         popup.add(background).setDepth(1);
         popup.add(failText);
         popup.add(closeButton);
+        popup.add(sadMom);
+        popup.add(sadKid);
         return popup;
     }
     private showFailPopup(): void {
@@ -362,7 +376,7 @@ export default class Level3 extends Phaser.Scene {
             .setDepth(1);
         const PassText = this.add.text(
             this.cameras.main.width / 2,
-            this.cameras.main.height / 2,
+            this.cameras.main.height / 2 + 50,
             "Congratulations! \n\nYou united the baby frog with its mother along the shortest path!\n\n" +
                 "Ready for more of a challenge? Try the next level!\n\n" +
                 "Let's hop to it!",
@@ -391,10 +405,25 @@ export default class Level3 extends Phaser.Scene {
             this.scene.start("Level3");
         });
 
+        const happyMom = this.add
+            .image(
+                this.cameras.main.width / 2,
+                this.cameras.main.height / 2 - 180,
+                "win"
+            )
+            .setScale(2);
+        const happyKid = this.add.image(
+            this.cameras.main.width / 2 + 30,
+            this.cameras.main.height / 2 - 160,
+            "win"
+        );
+
         const popup = this.add.container();
         popup.add(background).setDepth(1);
         popup.add(PassText);
         popup.add(closeButton);
+        popup.add(happyMom);
+        popup.add(happyKid);
         return popup;
     }
     private showPassPopup(): void {

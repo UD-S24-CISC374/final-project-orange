@@ -8,12 +8,14 @@ export default class PreloadScene extends Phaser.Scene {
 
     preload() {
         this.load.image("frogBackground", "assets/bg.png");
-        this.load.image("froghappy", "assets/faces/glad.png");
+        this.load.image("froghappy", "assets/faces/neutral.png");
         this.load.image("lilypad", "assets/newLilypad.png");
         this.load.image("start", "assets/start.png");
         this.load.image("instructions", "assets/newLilypad.png");
         this.load.image("frogcool", "assets/faces/cool.png");
         this.load.image("frogum", "assets/faces/um.png");
+        this.load.image("win", "assets/faces/glad.png");
+        this.load.image("lose", "assets/faces/sad.png");
     }
 
     create() {
