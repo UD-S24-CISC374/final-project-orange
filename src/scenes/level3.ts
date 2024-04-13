@@ -60,6 +60,7 @@ export default class Level3 extends Phaser.Scene {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 } else if (this.score == 6) {
+                    image.setTint(0x00ff00);
                     this.showPassPopup();
                 }
             });
@@ -308,8 +309,8 @@ export default class Level3 extends Phaser.Scene {
         const failText = this.add.text(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
-            "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n" +
-                "Don't be discouraged, try again!\n" +
+            "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
+                "Don't be discouraged, try again!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
