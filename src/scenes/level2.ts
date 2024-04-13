@@ -102,7 +102,7 @@ export default class Level2 extends Phaser.Scene {
                     this.score += 4;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
-                if (kid.x == 540) {
+                if (kid.x == 530) {
                     this.score += 3;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
