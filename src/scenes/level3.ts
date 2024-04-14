@@ -35,6 +35,14 @@ export default class Level3 extends Phaser.Scene {
         graphics.lineTo(320, 150);
         graphics.lineTo(530, 300);
         graphics.lineTo(750, 150);
+        graphics.lineTo(1000, 150);
+        graphics.lineTo(1000, 150);
+        graphics.lineTo(850, 550);
+        graphics.lineTo(530, 300);
+        graphics.lineTo(530, 300);
+        graphics.lineTo(530, 550);
+        graphics.lineTo(530, 550);
+        graphics.lineTo(235, 414);
         graphics.strokePath();
 
         let kid = this.add.image(235, 415, "froghappy");
