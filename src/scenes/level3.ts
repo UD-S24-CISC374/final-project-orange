@@ -381,7 +381,7 @@ export default class Level3 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.score = 0;
-            this.scene.start("Level3");
+            this.scene.start("Level4");
         });
 
         const happyMom = this.add
