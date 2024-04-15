@@ -159,25 +159,20 @@ export default class Level3 extends Phaser.Scene {
             .setAngle(280)
             .setInteractive()
             .on("pointerdown", () => {
-                /*
                 if (kid.x == 750) {
                     this.score += 1;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                */
-                if (kid.x == 320) {
+                } else if (kid.x == 320) {
                     this.score += 2;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
                 } else if (kid.x == 530) {
                     this.score += 2;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                /*
-                if (kid.x == 850) {
+                } else if (kid.x == 850) {
                     this.score += 5;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
                 }
-                */
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
