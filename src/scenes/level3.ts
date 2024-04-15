@@ -31,16 +31,16 @@ export default class Level3 extends Phaser.Scene {
 
         graphics.beginPath();
         graphics.lineTo(235, 414);
-        graphics.lineTo(320, 150);
+        // graphics.lineTo(320, 150);
         graphics.lineTo(320, 150);
         graphics.lineTo(530, 300);
         graphics.lineTo(750, 150);
-        graphics.lineTo(1000, 150);
+        //graphics.lineTo(1000, 150);
         graphics.lineTo(1000, 150);
         graphics.lineTo(850, 550);
+        //graphics.lineTo(530, 300);
         graphics.lineTo(530, 300);
-        graphics.lineTo(530, 300);
-        graphics.lineTo(530, 550);
+        //graphics.lineTo(530, 550);
         graphics.lineTo(530, 550);
         graphics.lineTo(235, 414);
         graphics.strokePath();
@@ -80,12 +80,8 @@ export default class Level3 extends Phaser.Scene {
             .setAngle(100)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 530) {
-                    this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 720) {
-                    this.score += 2;
+                if (kid.x == 850) {
+                    this.score += 4;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
 
@@ -101,18 +97,11 @@ export default class Level3 extends Phaser.Scene {
             .setAngle(0)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 380) {
-                    this.score += 4;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 540) {
-                    this.score += 3;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 800) {
+                if (kid.x == 750) {
                     this.score += 2;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
@@ -126,18 +115,11 @@ export default class Level3 extends Phaser.Scene {
             .setInteractive()
             .setDepth(0)
             .on("pointerdown", () => {
-                if (kid.x == 235) {
+                if (kid.x == 320) {
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
-                    this.score += 2;
+                    this.score += 3;
                 }
-                if (kid.x == 530) {
-                    this.score += 1;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
-                }
-                if (kid.x == 720) {
-                    this.score += 4;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
-                }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
@@ -150,22 +132,11 @@ export default class Level3 extends Phaser.Scene {
             .setAngle(280)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 235) {
-                    this.score += 2;
+                if (kid.x == 530) {
+                    this.score += 4;
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
-                if (kid.x == 380) {
-                    this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 720) {
-                    this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
@@ -178,22 +149,11 @@ export default class Level3 extends Phaser.Scene {
             .setAngle(280)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 235) {
+                if (kid.x == 530) {
                     this.score += 2;
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
-                if (kid.x == 380) {
-                    this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 720) {
-                    this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
@@ -222,9 +182,9 @@ export default class Level3 extends Phaser.Scene {
             this.score = 0;
             this.scene.start("Level3");
         });
-        /*
+
         this.add
-            .text(620, 260, "3", {
+            .text(250, 260, "3", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -232,7 +192,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(300, 260, "2", {
+            .text(440, 190, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -240,7 +200,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(380, 370, "2", {
+            .text(605, 210, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -248,7 +208,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(480, 240, "1", {
+            .text(870, 110, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -256,7 +216,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(550, 140, "4", {
+            .text(980, 300, "4", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -264,7 +224,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(680, 420, "3", {
+            .text(660, 400, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -272,7 +232,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(790, 320, "2", {
+            .text(520, 400, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -280,15 +240,7 @@ export default class Level3 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(880, 135, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-
-        this.add
-            .text(940, 300, "1", {
+            .text(350, 470, "4", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -297,7 +249,7 @@ export default class Level3 extends Phaser.Scene {
 
         this.input.keyboard?.createCursorKeys();
         this.cursors = this.input.keyboard?.createCursorKeys();
-*/
+
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
             color: "#000",
