@@ -372,6 +372,7 @@ export default class Level5 extends Phaser.Scene {
             fontStyle: "bold",
         });
     }
+
     private createFailPopup(): Phaser.GameObjects.Container {
         const background = this.add
             .rectangle(

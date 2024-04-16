@@ -35,7 +35,7 @@ export default class Level6 extends Phaser.Scene {
 
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x000000);
-
+        /*
         graphics.beginPath();
         graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
@@ -56,7 +56,7 @@ export default class Level6 extends Phaser.Scene {
         graphics.lineTo(1000, 150);
         graphics.lineTo(900, 500);
         graphics.strokePath();
-
+*/
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2)
@@ -88,7 +88,7 @@ export default class Level6 extends Phaser.Scene {
         kid.setScale(1);
 
         let l1 = this.add
-            .image(600, 450, "lilypad")
+            .image(350, 150, "lilypad")
             .setScale(0.4)
             .setAngle(150)
             .setInteractive()
@@ -115,7 +115,7 @@ export default class Level6 extends Phaser.Scene {
             .on("pointerout", () => l1.setScale(0.4));
 
         let l2 = this.add
-            .image(800, 300, "lilypad")
+            .image(600, 150, "lilypad")
             .setScale(0.4)
             .setAngle(100)
             .setInteractive()
@@ -141,8 +141,9 @@ export default class Level6 extends Phaser.Scene {
             })
             .on("pointerover", () => l2.setScale(0.5))
             .on("pointerout", () => l2.setScale(0.4));
+
         let l3 = this.add
-            .image(280, 150, "lilypad")
+            .image(825, 150, "lilypad")
             .setScale(0.4)
             .setAngle(45)
             .setInteractive()
@@ -165,8 +166,9 @@ export default class Level6 extends Phaser.Scene {
             })
             .on("pointerover", () => l3.setScale(0.5))
             .on("pointerout", () => l3.setScale(0.4));
+
         let l4 = this.add
-            .image(430, 300, "lilypad")
+            .image(475, 550, "lilypad")
             .setScale(0.4)
             .setAngle(280)
             .setInteractive()
@@ -196,8 +198,9 @@ export default class Level6 extends Phaser.Scene {
             })
             .on("pointerover", () => l4.setScale(0.5))
             .on("pointerout", () => l4.setScale(0.4));
+
         let l5 = this.add
-            .image(600, 150, "lilypad")
+            .image(700, 550, "lilypad")
             .setScale(0.4)
             .setAngle(0)
             .setInteractive()
@@ -219,8 +222,9 @@ export default class Level6 extends Phaser.Scene {
             })
             .on("pointerover", () => l5.setScale(0.5))
             .on("pointerout", () => l5.setScale(0.4));
+
         let l6 = this.add
-            .image(900, 500, "lilypad")
+            .image(900, 550, "lilypad")
             .setScale(0.4)
             .setAngle(230)
             .setInteractive()
@@ -236,13 +240,29 @@ export default class Level6 extends Phaser.Scene {
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
-            // this.score += 4;
-            // console.log("click pad" + this.score);
-            // this.scoreText?.setText("Path Length: " + this.score);
 
             .on("pointerover", () => l6.setScale(0.5))
             .on("pointerout", () => l6.setScale(0.4));
+        let l7 = this.add
+            .image(980, 350, "lilypad")
+            .setScale(0.4)
+            .setAngle(230)
+            .setInteractive()
+            .on("pointerdown", () => {
+                if (kid.x == 600 && kid.y == 450) {
+                    this.score += 3;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                }
+                if (kid.x == 800) {
+                    this.score += 1;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                }
+                console.log("click pad" + this.score);
+                this.scoreText?.setText("Path Length: " + this.score);
+            })
 
+            .on("pointerover", () => l7.setScale(0.5))
+            .on("pointerout", () => l7.setScale(0.4));
         this.failPopup = this.createFailPopup();
         this.failPopup.setVisible(false);
         this.passPopup = this.createPassPopup();
@@ -254,7 +274,7 @@ export default class Level6 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-
+        /*
         this.add
             .text(250, 270, "1", {
                 color: "#000",
@@ -355,6 +375,7 @@ export default class Level6 extends Phaser.Scene {
             color: "#000",
             fontStyle: "bold",
         });
+        */
     }
     private createFailPopup(): Phaser.GameObjects.Container {
         const background = this.add
