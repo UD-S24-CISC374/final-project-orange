@@ -2,6 +2,9 @@ import Phaser from "phaser";
 
 export default class PreloadScene extends Phaser.Scene {
     private instructionsPopup!: Phaser.GameObjects.Container;
+    private backgroundMusic!: Phaser.Sound.BaseSound;
+    private muteButton!: Phaser.GameObjects.Text;
+    private isMuted: boolean = true;
     constructor() {
         super({ key: "PreloadScene" });
     }
@@ -16,6 +19,7 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.image("frogum", "assets/faces/um.png");
         this.load.image("win", "assets/faces/glad.png");
         this.load.image("lose", "assets/faces/sad.png");
+        this.load.audio("backgroundMusic", "assets/background.mp3");
     }
 
     create() {
@@ -25,6 +29,20 @@ export default class PreloadScene extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+        this.backgroundMusic = this.sound.add("backgroundMusic", {
+            loop: true,
+        });
+        this.backgroundMusic.play();
+        this.muteButton = this.add
+            .text(this.cameras.main.width - 190, 50, "Mute", {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            })
+            .setInteractive();
+        this.muteButton.on("pointerdown", () => {
+            this.toggleMute();
+        });
         let scaleX = this.cameras.main.width / bg.width;
         let scaleY = this.cameras.main.height / bg.height;
         let scale = Math.max(scaleX, scaleY);
@@ -76,6 +94,10 @@ export default class PreloadScene extends Phaser.Scene {
         this.instructionsPopup = this.createInstructionsPopup();
         this.instructionsPopup.setVisible(false);
         // this.scene.start("Start");
+    }
+    toggleMute() {
+        this.isMuted = !this.isMuted;
+        this.game.sound.mute = this.isMuted;
     }
     private createInstructionsPopup(): Phaser.GameObjects.Container {
         const background = this.add.rectangle(

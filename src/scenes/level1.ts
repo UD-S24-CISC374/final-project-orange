@@ -8,6 +8,8 @@ export default class Level1 extends Phaser.Scene {
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
     private kid!: Phaser.GameObjects.Image;
+    private isMuted: boolean = true;
+    private muteButton!: Phaser.GameObjects.Text;
     constructor() {
         super({ key: "Level1" });
     }
@@ -18,6 +20,16 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+        this.muteButton = this.add
+            .text(this.cameras.main.width - 250, 50, "Mute", {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            })
+            .setInteractive();
+        this.muteButton.on("pointerdown", () => {
+            this.toggleMute();
+        });
 
         let scaleX = this.cameras.main.width / image.width;
         let scaleY = this.cameras.main.height / image.height;
@@ -315,6 +327,9 @@ export default class Level1 extends Phaser.Scene {
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
     }
-
+    toggleMute() {
+        this.isMuted = !this.isMuted;
+        this.game.sound.mute = this.isMuted;
+    }
     update() {}
 }
