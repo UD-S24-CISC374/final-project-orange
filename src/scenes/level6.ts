@@ -35,28 +35,34 @@ export default class Level6 extends Phaser.Scene {
 
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x000000);
-        /*
+
         graphics.beginPath();
         graphics.moveTo(235, 415);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(430, 300);
+        graphics.lineTo(350, 150);
         graphics.lineTo(235, 415);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(430, 300);
+        graphics.lineTo(475, 550);
+        graphics.lineTo(350, 150);
         graphics.lineTo(600, 150);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(900, 500);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
+        graphics.lineTo(600, 150);
+        graphics.lineTo(825, 150);
+        graphics.lineTo(825, 150);
         graphics.lineTo(1000, 150);
-        graphics.lineTo(900, 500);
+        graphics.lineTo(980, 350);
+        graphics.lineTo(980, 350);
+        graphics.lineTo(900, 550);
+        graphics.lineTo(900, 550);
+        graphics.lineTo(700, 550);
+        graphics.lineTo(700, 550);
+        graphics.lineTo(475, 550);
+        graphics.lineTo(600, 150);
+        graphics.lineTo(600, 150);
+        graphics.lineTo(700, 550);
+        graphics.lineTo(700, 550);
+        graphics.lineTo(825, 150);
+        graphics.lineTo(900, 550);
+
         graphics.strokePath();
-*/
+
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2)
