@@ -80,25 +80,25 @@ export default class Level6 extends Phaser.Scene {
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 800) {
+                if (kid.x == 825) {
                     this.score += 1;
                     kid.setX(mom.x + 10)
                         .setY(mom.y + 10)
                         .setDepth(1);
                 }
-                if (kid.x == 900) {
-                    this.score += 2;
+                if (kid.x == 980) {
+                    this.score += 3;
                     kid.setX(mom.x + 10)
                         .setY(mom.y + 10)
                         .setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
-                if (this.score > 4) {
+                if (this.score > 9) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 }
-                if (this.score == 4) {
+                if (this.score == 9) {
                     image.setTint(0x00ff00);
                     this.showPassPopup();
                 }
@@ -111,20 +111,15 @@ export default class Level6 extends Phaser.Scene {
             .setAngle(150)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 430) {
+                if (kid.x == 235) {
+                    this.score += 4;
+                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                } else if (kid.x == 600) {
                     this.score += 2;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
+                } else if (kid.x == 475) {
+                    this.score += 5;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 900) {
-                    this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                } else {
-                    //  l1.setTint(0xff00ff);
-                    // l1.clearTint();
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -138,20 +133,17 @@ export default class Level6 extends Phaser.Scene {
             .setAngle(100)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 3;
+                if (kid.x == 350) {
+                    this.score += 2;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 1;
+                } else if (kid.x == 825) {
+                    this.score += 4;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 430) {
-                    this.score += 1;
+                } else if (kid.x == 475) {
+                    this.score += 4;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 900) {
-                    this.score += 1;
+                } else if (kid.x == 700) {
+                    this.score += 6;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
@@ -167,16 +159,17 @@ export default class Level6 extends Phaser.Scene {
             .setInteractive()
             .setDepth(0)
             .on("pointerdown", () => {
-                if (kid.x == 235) {
+                if (kid.x == 600) {
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
-                    this.score += 1;
-                }
-                if (kid.x == 430) {
+                    this.score += 4;
+                } else if (kid.x == 1000) {
                     this.score += 1;
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 2;
+                } else if (kid.x == 700) {
+                    this.score += 4;
+                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                } else if (kid.x == 900) {
+                    this.score += 5;
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
@@ -192,23 +185,16 @@ export default class Level6 extends Phaser.Scene {
             .setInteractive()
             .on("pointerdown", () => {
                 if (kid.x == 235) {
+                    this.score += 3;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                } else if (kid.x == 700) {
+                    this.score += 1;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                } else if (kid.x == 350) {
+                    this.score += 5;
+                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                } else if (kid.x == 600) {
                     this.score += 4;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 280) {
-                    this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 2;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 2;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
@@ -223,16 +209,17 @@ export default class Level6 extends Phaser.Scene {
             .setAngle(0)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 280) {
-                    this.score += 2;
+                if (kid.x == 475) {
+                    this.score += 1;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                if (kid.x == 430) {
-                    this.score += 2;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                if (kid.x == 800) {
+                } else if (kid.x == 900) {
                     this.score += 3;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                } else if (kid.x == 600) {
+                    this.score += 6;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                } else if (kid.x == 825) {
+                    this.score += 4;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
@@ -247,12 +234,14 @@ export default class Level6 extends Phaser.Scene {
             .setAngle(230)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 450) {
+                if (kid.x == 700) {
                     this.score += 3;
                     kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                if (kid.x == 800) {
+                } else if (kid.x == 980) {
                     this.score += 1;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                } else if (kid.x == 825) {
+                    this.score += 5;
                     kid.setX(l6.x).setY(l6.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
@@ -267,13 +256,12 @@ export default class Level6 extends Phaser.Scene {
             .setAngle(230)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 3;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                if (kid.x == 800) {
+                if (kid.x == 900) {
                     this.score += 1;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                    kid.setX(l7.x).setY(l7.y).setDepth(1);
+                } else if (kid.x == 1000) {
+                    this.score += 3;
+                    kid.setX(l7.x).setY(l7.y).setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
