@@ -224,8 +224,24 @@ export default class Level10 extends Phaser.Scene {
             .setAngle(280)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 430) {
+                if (kid.x == 450) {
+                    this.score += 18;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 500) {
+                    this.score += 11;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 740) {
                     this.score += 2;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 960) {
+                    this.score += 19;
+                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                }
+                if (kid.x == 880) {
+                    this.score += 8;
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
                 }
 
@@ -241,8 +257,16 @@ export default class Level10 extends Phaser.Scene {
             .setAngle(90)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 430) {
-                    this.score += 2;
+                if (kid.x == 480) {
+                    this.score += 19;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                }
+                if (kid.x == 740) {
+                    this.score += 21;
+                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                }
+                if (kid.x == 960) {
+                    this.score += 7;
                     kid.setX(l6.x).setY(l6.y).setDepth(1);
                 }
 
