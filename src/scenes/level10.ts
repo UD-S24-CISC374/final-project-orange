@@ -304,7 +304,124 @@ export default class Level10 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(480, 200, "18", {
+            .text(370, 450, "18", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(470, 420, "11", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(550, 490, "18", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(700, 580, "12", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(650, 100, "19", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(650, 310, "11", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(610, 370, "11", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(680, 400, "2", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(820, 420, "19", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(780, 500, "8", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(860, 325, "16", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(755, 220, "21", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+        this.add
+            .text(880, 228, "7", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(910, 120, "13", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(985, 200, "15", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(975, 440, "25", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
