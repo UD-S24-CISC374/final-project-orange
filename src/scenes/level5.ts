@@ -467,7 +467,7 @@ export default class Level5 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Congratulations! \n\nYou united the baby frog with its mother along the shortest path!\n\n" +
-                "Ready for more of a challenge? Try the next level!\n\n" +
+                "You made it halfway through the levels! Prepare yourself for more challenging levels ahead!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
