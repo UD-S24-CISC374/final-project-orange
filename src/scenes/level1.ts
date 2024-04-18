@@ -49,12 +49,14 @@ export default class Level1 extends Phaser.Scene {
         graphics.lineTo(650, 450);
         graphics.lineTo(235, 415);
         graphics.strokePath();
+        const splash = this.sound.add("splash2", { loop: false });
 
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
+                splash.play();
                 if (kid.x == 500) {
                     this.score += 1;
                     kid.setX(mom.x + 10)
