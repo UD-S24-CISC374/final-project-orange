@@ -81,25 +81,25 @@ export default class Level10 extends Phaser.Scene {
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 800) {
-                    this.score += 1;
+                if (kid.x == 770) {
+                    this.score += 13;
                     kid.setX(mom.x + 10)
                         .setY(mom.y + 10)
                         .setDepth(1);
                 }
-                if (kid.x == 900) {
-                    this.score += 2;
+                if (kid.x == 960) {
+                    this.score += 15;
                     kid.setX(mom.x + 10)
                         .setY(mom.y + 10)
                         .setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
-                if (this.score > 4) {
+                if (this.score > 69) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 }
-                if (this.score == 4) {
+                if (this.score == 69) {
                     image.setTint(0x00ff00);
                     this.showPassPopup();
                 }
@@ -112,8 +112,8 @@ export default class Level10 extends Phaser.Scene {
             .setAngle(150)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 430) {
-                    this.score += 2;
+                if (kid.x == 4235) {
+                    this.score += 23;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
 
