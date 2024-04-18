@@ -21,7 +21,7 @@ export default class Level10 extends Phaser.Scene {
             "frogBackground"
         );
         this.muteButton = this.add
-            .text(this.cameras.main.width - 250, 50, "Mute", {
+            .text(this.cameras.main.width - 100, 100, "Mute", {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",

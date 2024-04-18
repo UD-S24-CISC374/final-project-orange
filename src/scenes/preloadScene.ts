@@ -5,6 +5,8 @@ export default class PreloadScene extends Phaser.Scene {
     private backgroundMusic!: Phaser.Sound.BaseSound;
     private muteButton!: Phaser.GameObjects.Text;
     private isMuted: boolean = true;
+    private splash!: Phaser.Sound.BaseSound;
+
     constructor() {
         super({ key: "PreloadScene" });
     }
@@ -75,6 +77,7 @@ export default class PreloadScene extends Phaser.Scene {
                 fontStyle: "bold",
             }
         );
+        //const splash = this.sound.add("splash2", {loop: false});
         instructions
             .setInteractive()
             .on("pointerdown", () => {
