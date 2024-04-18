@@ -1,7 +1,6 @@
 import Phaser from "phaser";
 
 export default class Level10 extends Phaser.Scene {
-    private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
     private mom?: Phaser.Physics.Arcade.StaticGroup;
     private scoreText?: Phaser.GameObjects.Text;
@@ -21,7 +20,7 @@ export default class Level10 extends Phaser.Scene {
             "frogBackground"
         );
         this.muteButton = this.add
-            .text(this.cameras.main.width - 100, 100, "Mute", {
+            .text(this.cameras.main.width - 80, 100, "Mute", {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
@@ -42,7 +41,7 @@ export default class Level10 extends Phaser.Scene {
         restart.setOrigin(1, 0).setInteractive();
         restart.on("pointerdown", () => {
             this.score = 0;
-            // this.scene.start("Level9");
+            this.scene.start("Level10");
         });
 
         const graphics = this.add.graphics();
@@ -51,21 +50,6 @@ export default class Level10 extends Phaser.Scene {
         graphics.beginPath();
         graphics.moveTo(235, 415);
         graphics.lineTo(280, 150);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(235, 415);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(900, 500);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(1000, 150);
         graphics.lineTo(900, 500);
         graphics.strokePath();
 
@@ -100,7 +84,7 @@ export default class Level10 extends Phaser.Scene {
         kid.setScale(1);
 
         let l1 = this.add
-            .image(600, 450, "lilypad")
+            .image(280, 180, "lilypad")
             .setScale(0.4)
             .setAngle(150)
             .setInteractive()
@@ -109,17 +93,7 @@ export default class Level10 extends Phaser.Scene {
                     this.score += 2;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
-                if (kid.x == 800) {
-                    this.score += 1;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                }
-                if (kid.x == 900) {
-                    this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
-                } else {
-                    //  l1.setTint(0xff00ff);
-                    // l1.clearTint();
-                }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
@@ -127,133 +101,21 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerout", () => l1.setScale(0.4));
 
         let l2 = this.add
-            .image(800, 300, "lilypad")
+            .image(450, 500, "lilypad")
             .setScale(0.4)
-            .setAngle(100)
+            .setAngle(150)
             .setInteractive()
             .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 3;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 1;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
                 if (kid.x == 430) {
-                    this.score += 1;
+                    this.score += 2;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
-                if (kid.x == 900) {
-                    this.score += 1;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
-                }
+
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l2.setScale(0.5))
             .on("pointerout", () => l2.setScale(0.4));
-        let l3 = this.add
-            .image(280, 150, "lilypad")
-            .setScale(0.4)
-            .setAngle(45)
-            .setInteractive()
-            .setDepth(0)
-            .on("pointerdown", () => {
-                if (kid.x == 235) {
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
-                    this.score += 1;
-                }
-                if (kid.x == 430) {
-                    this.score += 1;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 2;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            .on("pointerover", () => l3.setScale(0.5))
-            .on("pointerout", () => l3.setScale(0.4));
-        let l4 = this.add
-            .image(430, 300, "lilypad")
-            .setScale(0.4)
-            .setAngle(280)
-            .setInteractive()
-            .on("pointerdown", () => {
-                if (kid.x == 235) {
-                    this.score += 4;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 280) {
-                    this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 150) {
-                    this.score += 2;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 2;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            .on("pointerover", () => l4.setScale(0.5))
-            .on("pointerout", () => l4.setScale(0.4));
-        let l5 = this.add
-            .image(600, 150, "lilypad")
-            .setScale(0.4)
-            .setAngle(0)
-            .setInteractive()
-            .on("pointerdown", () => {
-                if (kid.x == 280) {
-                    this.score += 2;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                if (kid.x == 430) {
-                    this.score += 2;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 3;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            .on("pointerover", () => l5.setScale(0.5))
-            .on("pointerout", () => l5.setScale(0.4));
-        let l6 = this.add
-            .image(900, 500, "lilypad")
-            .setScale(0.4)
-            .setAngle(230)
-            .setInteractive()
-            .on("pointerdown", () => {
-                if (kid.x == 600 && kid.y == 450) {
-                    this.score += 3;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                if (kid.x == 800) {
-                    this.score += 1;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
-                }
-                console.log("click pad" + this.score);
-                this.scoreText?.setText("Path Length: " + this.score);
-            })
-            // this.score += 4;
-            // console.log("click pad" + this.score);
-            // this.scoreText?.setText("Path Length: " + this.score);
-
-            .on("pointerover", () => l6.setScale(0.5))
-            .on("pointerout", () => l6.setScale(0.4));
 
         this.failPopup = this.createFailPopup();
         this.failPopup.setVisible(false);
@@ -274,93 +136,6 @@ export default class Level10 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        this.add
-            .text(430, 110, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(910, 180, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-
-        this.add
-            .text(340, 320, "4", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(515, 380, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(750, 480, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(380, 190, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(500, 200, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(730, 195, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(620, 260, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(705, 330, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(880, 390, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(950, 280, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.input.keyboard?.createCursorKeys();
-        this.cursors = this.input.keyboard?.createCursorKeys();
 
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
