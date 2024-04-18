@@ -463,11 +463,11 @@ export default class Level8 extends Phaser.Scene {
         //close button
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
-            this.cameras.main.height / 2 + 280,
+            this.cameras.main.height / 2 + 260,
             "Level 9",
             {
                 color: "#000",
-                fontSize: "24px",
+                fontSize: "30px",
                 fontStyle: "bold",
             }
         );

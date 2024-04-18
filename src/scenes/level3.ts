@@ -380,11 +380,11 @@ export default class Level3 extends Phaser.Scene {
         PassText.setOrigin(0.5);
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
-            this.cameras.main.height / 2 + 280,
+            this.cameras.main.height / 2 + 260,
             "Level 4",
             {
                 color: "#000",
-                fontSize: "24px",
+                fontSize: "30px",
                 fontStyle: "bold",
             }
         );
