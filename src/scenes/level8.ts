@@ -316,7 +316,7 @@ export default class Level8 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(220, 270, "4", {
+            .text(220, 270, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -364,7 +364,7 @@ export default class Level8 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(700, 610, "1", {
+            .text(700, 610, "6", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -372,7 +372,7 @@ export default class Level8 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(380, 500, "6", {
+            .text(380, 500, "7", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -380,7 +380,7 @@ export default class Level8 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(380, 350, "3", {
+            .text(380, 350, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -388,7 +388,7 @@ export default class Level8 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(690, 330, "3", {
+            .text(690, 330, "6", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
