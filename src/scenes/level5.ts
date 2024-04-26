@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import Instructions from "../objects/instructions";
 
 export default class Level5 extends Phaser.Scene {
     private score: number = 0;
@@ -7,6 +8,8 @@ export default class Level5 extends Phaser.Scene {
     private passPopup!: Phaser.GameObjects.Container;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
+    private instructions: Instructions;
+
     constructor() {
         super({ key: "Level5" });
     }

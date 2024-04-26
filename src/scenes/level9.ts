@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import Instructions from "../objects/instructions";
 
 export default class Level9 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -10,6 +11,8 @@ export default class Level9 extends Phaser.Scene {
     private kid!: Phaser.GameObjects.Image;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
+    private instructions: Instructions;
+
     constructor() {
         super({ key: "Level9" });
     }

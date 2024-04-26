@@ -1,5 +1,6 @@
 // import { Linter } from "eslint";
 import Phaser from "phaser";
+import Instructions from "../objects/instructions";
 
 export default class Level3 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -10,6 +11,8 @@ export default class Level3 extends Phaser.Scene {
     private kid!: Phaser.GameObjects.Image;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
+    private instructions: Instructions;
+
     constructor() {
         super({ key: "Level3" });
     }
