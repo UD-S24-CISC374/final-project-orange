@@ -386,6 +386,7 @@ export default class Level5 extends Phaser.Scene {
             color: "#000",
             fontStyle: "bold",
         });
+        this.instructions = new Instructions(this, 100, 200);
     }
 
     private createFailPopup(): Phaser.GameObjects.Container {
