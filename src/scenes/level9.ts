@@ -47,31 +47,44 @@ export default class Level9 extends Phaser.Scene {
             this.score = 0;
             this.scene.start("Level9");
         });
-        /*
+
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0x000000);
 
         graphics.beginPath();
         graphics.moveTo(235, 415);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(280, 150);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(235, 415);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(430, 300);
-        graphics.lineTo(600, 150);
-        graphics.lineTo(800, 300);
-        graphics.lineTo(900, 500);
-        graphics.lineTo(600, 450);
-        graphics.lineTo(800, 300);
+        graphics.lineTo(200, 125);
+        graphics.lineTo(200, 125);
+        graphics.lineTo(500, 125);
+        graphics.lineTo(500, 125);
+        graphics.lineTo(800, 125);
+        graphics.lineTo(800, 125);
         graphics.lineTo(1000, 150);
-        graphics.lineTo(900, 500);
+        graphics.lineTo(1000, 150);
+        graphics.lineTo(1100, 350);
+        graphics.lineTo(1100, 350);
+        graphics.lineTo(870, 370);
+        graphics.lineTo(870, 370);
+        graphics.lineTo(680, 550);
+        graphics.lineTo(680, 550);
+        graphics.lineTo(650, 300);
+        graphics.lineTo(650, 300);
+        graphics.lineTo(420, 330);
+
+        graphics.lineTo(420, 330);
+        graphics.lineTo(235, 415);
+        graphics.lineTo(680, 550);
+        graphics.lineTo(420, 330);
+        graphics.lineTo(420, 330);
+        graphics.lineTo(200, 125);
+        graphics.lineTo(420, 330);
+        graphics.lineTo(500, 125);
+        graphics.lineTo(650, 300);
+        graphics.lineTo(800, 125);
+        graphics.lineTo(650, 300);
+        graphics.lineTo(1000, 150);
         graphics.strokePath();
-*/
+
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2)
@@ -180,7 +193,7 @@ export default class Level9 extends Phaser.Scene {
             .on("pointerout", () => l3.setScale(0.4));
 
         let l4 = this.add
-            .image(480, 420, "lilypad")
+            .image(420, 330, "lilypad")
             .setScale(0.4)
             .setAngle(280)
             .setInteractive()
