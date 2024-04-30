@@ -323,7 +323,7 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(250, 270, "1", {
+            .text(250, 270, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -339,7 +339,7 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(650, 90, "1", {
+            .text(650, 90, "9", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -371,7 +371,7 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(820, 460, "1", {
+            .text(820, 460, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -411,7 +411,7 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(770, 300, "1", {
+            .text(770, 300, "4", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -419,42 +419,42 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(880, 210, "2", {
+            .text(880, 210, "7", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(720, 190, "1", {
+            .text(720, 190, "6", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(605, 180, "1", {
+            .text(605, 180, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(450, 190, "1", {
+            .text(450, 190, "8", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(345, 210, "1", {
+            .text(345, 210, "5", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(315, 350, "1", {
+            .text(315, 350, "7", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
