@@ -1,6 +1,6 @@
 // import { Linter } from "eslint";
 import Phaser from "phaser";
-
+import Instructions from "../objects/instructions";
 export default class Level1 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
@@ -10,6 +10,7 @@ export default class Level1 extends Phaser.Scene {
     private kid!: Phaser.GameObjects.Image;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
+    private instructions: Instructions;
     constructor() {
         super({ key: "Level1" });
     }
@@ -20,6 +21,7 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+
         this.muteButton = this.add
             .text(this.cameras.main.width - 80, 100, "Mute", {
                 color: "#000",
@@ -193,6 +195,7 @@ export default class Level1 extends Phaser.Scene {
             color: "#000",
             fontStyle: "bold",
         });
+        this.instructions = new Instructions(this, 100, 200);
     }
     private createFailPopup(): Phaser.GameObjects.Container {
         const background = this.add
@@ -333,5 +336,6 @@ export default class Level1 extends Phaser.Scene {
         this.isMuted = !this.isMuted;
         this.game.sound.mute = this.isMuted;
     }
+
     update() {}
 }
