@@ -83,6 +83,8 @@ export default class Level9 extends Phaser.Scene {
         graphics.lineTo(800, 125);
         graphics.lineTo(650, 300);
         graphics.lineTo(1000, 150);
+        graphics.lineTo(650, 300);
+        graphics.lineTo(870, 370);
         graphics.strokePath();
 
         let kid = this.add.image(235, 415, "froghappy");
@@ -319,7 +321,7 @@ export default class Level9 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
-        /*
+
         this.add
             .text(250, 270, "1", {
                 color: "#000",
@@ -327,15 +329,9 @@ export default class Level9 extends Phaser.Scene {
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
+
         this.add
-            .text(430, 110, "2", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(910, 180, "1", {
+            .text(360, 90, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -343,70 +339,122 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
 
         this.add
-            .text(340, 320, "4", {
+            .text(650, 90, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(915, 100, "4", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(1080, 220, "2", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(980, 380, "3", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(820, 460, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(410, 480, "2", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(570, 320, "3", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(520, 420, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(695, 410, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(770, 300, "1", {
+                color: "#000",
+                fontSize: "35px",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0);
+
+        this.add
+            .text(880, 210, "2", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(515, 380, "2", {
+            .text(720, 190, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(750, 480, "3", {
+            .text(605, 180, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(380, 190, "1", {
+            .text(450, 190, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(500, 200, "2", {
+            .text(345, 210, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
             })
             .setOrigin(1, 0);
         this.add
-            .text(730, 195, "3", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(620, 260, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(705, 330, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(880, 390, "1", {
-                color: "#000",
-                fontSize: "35px",
-                fontStyle: "bold",
-            })
-            .setOrigin(1, 0);
-        this.add
-            .text(950, 280, "2", {
+            .text(315, 350, "1", {
                 color: "#000",
                 fontSize: "35px",
                 fontStyle: "bold",
@@ -414,7 +462,7 @@ export default class Level9 extends Phaser.Scene {
             .setOrigin(1, 0);
         this.input.keyboard?.createCursorKeys();
         this.cursors = this.input.keyboard?.createCursorKeys();
-*/
+
         this.scoreText = this.add.text(16, 16, "Path Length: " + this.score, {
             fontSize: "45px",
             color: "#000",
