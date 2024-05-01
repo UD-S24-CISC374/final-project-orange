@@ -25,7 +25,7 @@ export default class PreloadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("Level10");
+        //this.scene.start("Level10");
         let bg = this.add.image(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
