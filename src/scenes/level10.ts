@@ -552,13 +552,13 @@ export default class Level10 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
+                "Focus on the bigger picture here. The shortest path could be that you have to pick some larger numbers over smaller ones. Think everything through fully!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);
@@ -625,7 +625,7 @@ export default class Level10 extends Phaser.Scene {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         PassText.setOrigin(0.5);

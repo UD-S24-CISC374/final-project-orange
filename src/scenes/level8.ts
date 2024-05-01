@@ -282,7 +282,7 @@ export default class Level8 extends Phaser.Scene {
         let l7 = this.add
             .image(825, 595, "lilypad")
             .setScale(0.4)
-            .setAngle(230)
+            .setAngle(180)
             .setInteractive()
             .on("pointerdown", () => {
                 if (kid.x == 530) {
@@ -301,7 +301,7 @@ export default class Level8 extends Phaser.Scene {
         let l8 = this.add
             .image(1050, 370, "lilypad")
             .setScale(0.4)
-            .setAngle(230)
+            .setAngle(270)
             .setInteractive()
             .on("pointerdown", () => {
                 if (kid.x == 1000) {
@@ -503,7 +503,7 @@ export default class Level8 extends Phaser.Scene {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);
