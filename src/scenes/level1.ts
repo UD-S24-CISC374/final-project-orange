@@ -211,13 +211,13 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
-                "Let's hop to it!",
+                "Remember, Dijkstra's algortihm is useful to find the shortest distance from start to end! On your first move, think about which path has the smaller number and continue from there! \n\n" +
+                "Don't be discouraged, try again!\n\n",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);

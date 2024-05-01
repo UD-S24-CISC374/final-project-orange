@@ -169,8 +169,8 @@ export default class Level3 extends Phaser.Scene {
 
         let l5 = this.add
             .image(530, 300, "lilypad")
-            .setScale(0.3)
-            .setAngle(280)
+            .setScale(0.4)
+            .setAngle(250)
             .setInteractive()
             .on("pointerdown", () => {
                 if (kid.x == 750) {
@@ -304,13 +304,13 @@ export default class Level3 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
+                "You could try splitting this level into two sections. Work to find the shortest path for both the beginning and end section, then put them together! \n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);

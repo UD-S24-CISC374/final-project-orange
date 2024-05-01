@@ -302,13 +302,13 @@ export default class Level2 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
+                "This level is trickier because on the first move, both paths have the same cost. It might be easier to work backwards on this level and plan out your path before clicking!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);
