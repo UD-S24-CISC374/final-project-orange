@@ -7,6 +7,7 @@ export default class Level1 extends Phaser.Scene {
     private scoreText?: Phaser.GameObjects.Text;
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
+    private hintPopup!: Phaser.GameObjects.Container;
     private kid!: Phaser.GameObjects.Image;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
@@ -94,6 +95,7 @@ export default class Level1 extends Phaser.Scene {
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
                 if (kid.x == 650) {
+                    this.hideHintPopup();
                     this.score += 3;
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
@@ -119,6 +121,8 @@ export default class Level1 extends Phaser.Scene {
                     this.score += 3;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
+                ////////////////////////////////////////////
+                this.showHintPopup();
 
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -130,6 +134,8 @@ export default class Level1 extends Phaser.Scene {
         this.failPopup.setVisible(false);
         this.passPopup = this.createPassPopup();
         this.passPopup.setVisible(false);
+        this.hintPopup = this.createHintPopup();
+        this.hintPopup.setVisible(false);
         this.add
             .text(this.cameras.main.width - 15, 15, "Level 1", {
                 color: "#000000",
@@ -211,13 +217,13 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
-                "Let's hop to it!",
+                "Remember, Dijkstra's algortihm is useful to find the shortest distance from start to end! On your first move, think about which path has the smaller number and continue from there! \n\n" +
+                "Don't be discouraged, try again!\n\n",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);
@@ -331,6 +337,75 @@ export default class Level1 extends Phaser.Scene {
     }
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
+    }
+
+    ///////////////////////////////////////////
+    private createHintPopup(): Phaser.GameObjects.Container {
+        const background = this.add
+            .rectangle(
+                this.cameras.main.width / 2 + 300,
+                this.cameras.main.height / 2 + 75,
+                400,
+                320,
+                0xadd8e6
+            )
+            .setDepth(1);
+        const hintText = this.add.text(
+            this.cameras.main.width / 2 + 300,
+            this.cameras.main.height / 2 + 20 + 65,
+            "Any moves to this lilypad will result in a longer path.\n\nFrom the starting point, moving here instead of the above lilypad adds unnecesary cost. \n\n",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        hintText.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2 + 125,
+            this.cameras.main.height / 2 + 120 + 75,
+            "Restart",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        const continueButton = this.add.text(
+            this.cameras.main.width / 2 + 380,
+            this.cameras.main.height / 2 + 120 + 90,
+            "Continue",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+
+        continueButton.setOrigin(0.5);
+        continueButton.setInteractive();
+        continueButton.on("pointerdown", () => {
+            this.hintPopup.setVisible(false);
+        });
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => {
+            this.scene.start("Level1");
+        });
+
+        const popup = this.add.container();
+        popup.add(background).setDepth(1);
+        popup.add(hintText);
+        popup.add(closeButton);
+        popup.add(continueButton);
+        return popup;
+    }
+    private showHintPopup(): void {
+        this.hintPopup.setVisible(true);
+    }
+    private hideHintPopup(): void {
+        this.hintPopup.setVisible(false);
     }
     toggleMute() {
         this.isMuted = !this.isMuted;

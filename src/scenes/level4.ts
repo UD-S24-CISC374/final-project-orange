@@ -386,13 +386,13 @@ export default class Level4 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Unfortunately, you did not reunite the baby frog with its mother along the shortest path.\n\n" +
-                "Don't be discouraged, try again!\n\n" +
+                "A good starting point for this level would be to treat each move as its own thing! When on each lilypad, look at all of the options and choose the path with the smallest cost!\n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         failText.setOrigin(0.5);

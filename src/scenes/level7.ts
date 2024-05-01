@@ -509,13 +509,13 @@ export default class Level7 extends Phaser.Scene {
             this.cameras.main.width / 2,
             this.cameras.main.height / 2 + 50,
             "Congratulations! \n\nYou united the baby frog with its mother along the shortest path!\n\n" +
-                "Will anything ever slow you down?!?! Keep going!\n\n" +
+                "Remember, one path might have an immediate shorter cost, but will cause you to visit other nodes, adding more to your total. Look at all of the options before selecting your path! \n\n" +
                 "Let's hop to it!",
             {
                 color: "#000",
                 fontSize: "24px",
                 fontStyle: "bold",
-                wordWrap: { width: 350 },
+                wordWrap: { width: 500 },
             }
         );
         PassText.setOrigin(0.5);
