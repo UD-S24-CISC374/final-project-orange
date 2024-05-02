@@ -8,6 +8,8 @@ export default class Level2 extends Phaser.Scene {
     private scoreText?: Phaser.GameObjects.Text;
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
+    private hintPopup!: Phaser.GameObjects.Container;
+    private hint2Popup!: Phaser.GameObjects.Container;
     private kid!: Phaser.GameObjects.Image;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
@@ -112,6 +114,7 @@ export default class Level2 extends Phaser.Scene {
             .setAngle(0)
             .setInteractive()
             .on("pointerdown", () => {
+                this.showHint2Popup();
                 if (kid.x == 380) {
                     this.score += 4;
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
@@ -137,6 +140,7 @@ export default class Level2 extends Phaser.Scene {
             .setInteractive()
             .setDepth(0)
             .on("pointerdown", () => {
+                this.showHintPopup();
                 if (kid.x == 235) {
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
                     this.score += 2;
@@ -187,6 +191,10 @@ export default class Level2 extends Phaser.Scene {
         this.failPopup.setVisible(false);
         this.passPopup = this.createPassPopup();
         this.passPopup.setVisible(false);
+        this.hintPopup = this.createHintPopup();
+        this.hintPopup.setVisible(false);
+        this.hint2Popup = this.createHintPopup();
+        this.hint2Popup.setVisible(false);
         this.add
             .text(this.cameras.main.width - 15, 15, "Level 2", {
                 color: "#000000",
@@ -423,6 +431,140 @@ export default class Level2 extends Phaser.Scene {
     }
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
+    }
+    private createHintPopup(): Phaser.GameObjects.Container {
+        const background = this.add
+            .rectangle(
+                this.cameras.main.width / 2 + 300,
+                this.cameras.main.height / 2 + 75,
+                400,
+                320,
+                0xadd8e6
+            )
+            .setDepth(1);
+        const hintText = this.add.text(
+            this.cameras.main.width / 2 + 300,
+            this.cameras.main.height / 2 + 20 + 65,
+            "This first move is a tricky one since both paths have a cost of 2. Look a little bit further along the path, only one of the lilypads will lead to the shortest path.\n\n",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        hintText.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2 + 125,
+            this.cameras.main.height / 2 + 120 + 75,
+            "Restart",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        const continueButton = this.add.text(
+            this.cameras.main.width / 2 + 380,
+            this.cameras.main.height / 2 + 120 + 90,
+            "Continue",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+
+        continueButton.setOrigin(0.5);
+        continueButton.setInteractive();
+        continueButton.on("pointerdown", () => {
+            this.hintPopup.setVisible(false);
+        });
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => {
+            this.scene.start("Level2");
+        });
+
+        const popup = this.add.container();
+        popup.add(background).setDepth(1);
+        popup.add(hintText);
+        popup.add(closeButton);
+        popup.add(continueButton);
+        return popup;
+    }
+    private showHintPopup(): void {
+        this.hintPopup.setVisible(true);
+    }
+    private hideHintPopup(): void {
+        this.hintPopup.setVisible(false);
+    }
+    private createHint2Popup(): Phaser.GameObjects.Container {
+        const background = this.add
+            .rectangle(
+                this.cameras.main.width / 2 + 300,
+                this.cameras.main.height / 2 + 75,
+                400,
+                320,
+                0xadd8e6
+            )
+            .setDepth(1);
+        const hint2Text = this.add.text(
+            this.cameras.main.width / 2 + 300,
+            this.cameras.main.height / 2 + 20 + 65,
+            "Youre headed down the wrong path and might be doing a different type of graph traversal, not Dijkstra's algorithm. Remember that in the event of a tie between paths, you need to check out both, but only lock in the shortest path!\n\n",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+                wordWrap: { width: 350 },
+            }
+        );
+        hint2Text.setOrigin(0.5);
+        //close button
+        const closeButton = this.add.text(
+            this.cameras.main.width / 2 + 125,
+            this.cameras.main.height / 2 + 120 + 75,
+            "Restart",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+        const continueButton = this.add.text(
+            this.cameras.main.width / 2 + 380,
+            this.cameras.main.height / 2 + 120 + 90,
+            "Continue",
+            {
+                color: "#000",
+                fontSize: "24px",
+                fontStyle: "bold",
+            }
+        );
+
+        continueButton.setOrigin(0.5);
+        continueButton.setInteractive();
+        continueButton.on("pointerdown", () => {
+            this.hint2Popup.setVisible(false);
+        });
+        closeButton.setInteractive();
+        closeButton.on("pointerdown", () => {
+            this.scene.start("Level2");
+        });
+
+        const popup = this.add.container();
+        popup.add(background).setDepth(1);
+        popup.add(hint2Text);
+        popup.add(closeButton);
+        popup.add(continueButton);
+        return popup;
+    }
+    private showHint2Popup(): void {
+        this.hint2Popup.setVisible(true);
+    }
+    private hideHint2Popup(): void {
+        this.hint2Popup.setVisible(false);
     }
     toggleMute() {
         this.isMuted = !this.isMuted;
