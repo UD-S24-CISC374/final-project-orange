@@ -392,6 +392,7 @@ export default class Level1 extends Phaser.Scene {
         closeButton.setInteractive();
         closeButton.on("pointerdown", () => {
             this.scene.start("Level1");
+            this.score = 0;
         });
 
         const popup = this.add.container();
