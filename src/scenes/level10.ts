@@ -87,15 +87,25 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 770) {
                     this.score += 13;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 960) {
                     this.score += 15;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 this.scoreText?.setText("Path Length: " + this.score);
                 if (this.score > 69) {
@@ -117,15 +127,36 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 235) {
                     this.score += 23;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 500) {
                     this.score += 9;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 480) {
                     this.score += 17;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -141,19 +172,47 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 235) {
                     this.score += 18;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 500) {
                     this.score += 11;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 630) {
                     this.score += 18;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 880) {
                     this.score += 12;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -169,15 +228,36 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 280) {
                     this.score += 17;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 500) {
                     this.score += 9;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 770) {
                     this.score += 19;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -193,23 +273,58 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 280) {
                     this.score += 9;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 450) {
                     this.score += 11;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 480) {
                     this.score += 9;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 630) {
                     this.score += 11;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 740) {
                     this.score += 11;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -225,23 +340,58 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 450) {
                     this.score += 18;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l5.x },
+                        y: { from: kid.y, to: l5.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 500) {
                     this.score += 11;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l5.x },
+                        y: { from: kid.y, to: l5.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 740) {
                     this.score += 2;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l5.x },
+                        y: { from: kid.y, to: l5.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 960) {
                     this.score += 19;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l5.x },
+                        y: { from: kid.y, to: l5.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 880) {
                     this.score += 8;
-                    kid.setX(l5.x).setY(l5.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l5.x },
+                        y: { from: kid.y, to: l5.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -257,15 +407,36 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 480) {
                     this.score += 19;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l6.x },
+                        y: { from: kid.y, to: l6.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 740) {
                     this.score += 21;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l6.x },
+                        y: { from: kid.y, to: l6.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 960) {
                     this.score += 7;
-                    kid.setX(l6.x).setY(l6.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l6.x },
+                        y: { from: kid.y, to: l6.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -281,19 +452,47 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 500) {
                     this.score += 11;
-                    kid.setX(l7.x).setY(l7.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l7.x },
+                        y: { from: kid.y, to: l7.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 630) {
                     this.score += 2;
-                    kid.setX(l7.x).setY(l7.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l7.x },
+                        y: { from: kid.y, to: l7.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 770) {
                     this.score += 21;
-                    kid.setX(l7.x).setY(l7.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l7.x },
+                        y: { from: kid.y, to: l7.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 960) {
                     this.score += 16;
-                    kid.setX(l7.x).setY(l7.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l7.x },
+                        y: { from: kid.y, to: l7.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -309,19 +508,47 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 770) {
                     this.score += 7;
-                    kid.setX(l8.x).setY(l8.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l8.x },
+                        y: { from: kid.y, to: l8.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 740) {
                     this.score += 16;
-                    kid.setX(l8.x).setY(l8.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l8.x },
+                        y: { from: kid.y, to: l8.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 630) {
                     this.score += 19;
-                    kid.setX(l8.x).setY(l8.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l8.x },
+                        y: { from: kid.y, to: l8.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 880) {
                     this.score += 25;
-                    kid.setX(l8.x).setY(l8.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l8.x },
+                        y: { from: kid.y, to: l8.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -337,15 +564,36 @@ export default class Level10 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 450) {
                     this.score += 12;
-                    kid.setX(l9.x).setY(l9.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l9.x },
+                        y: { from: kid.y, to: l9.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 463) {
                     this.score += 8;
-                    kid.setX(l9.x).setY(l9.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l9.x },
+                        y: { from: kid.y, to: l9.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 960) {
                     this.score += 25;
-                    kid.setX(l9.x).setY(l9.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l9.x },
+                        y: { from: kid.y, to: l9.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 this.scoreText?.setText("Path Length: " + this.score);
