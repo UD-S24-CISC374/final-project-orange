@@ -20,6 +20,7 @@ export default class Level2 extends Phaser.Scene {
     }
 
     create() {
+        const splash = this.sound.add("splash2", { loop: false });
         let image = this.add.image(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
@@ -65,15 +66,25 @@ export default class Level2 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 800) {
                     this.score += 1;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 720) {
                     this.score += 2;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -95,11 +106,25 @@ export default class Level2 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 530) {
                     this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 720) {
                     this.score += 2;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
 
                 console.log("click pad" + this.score);
@@ -117,15 +142,36 @@ export default class Level2 extends Phaser.Scene {
                 this.showSecondHintPopup();
                 if (kid.x == 380) {
                     this.score += 4;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 530) {
                     this.score += 3;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 800) {
                     this.score += 2;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -142,16 +188,37 @@ export default class Level2 extends Phaser.Scene {
             .on("pointerdown", () => {
                 this.showHintPopup();
                 if (kid.x == 235) {
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                     this.score += 2;
                 }
                 if (kid.x == 530) {
                     this.score += 1;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 720) {
                     this.score += 4;
-                    kid.setX(l3.x).setY(l3.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l3.x },
+                        y: { from: kid.y, to: l3.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
@@ -167,19 +234,47 @@ export default class Level2 extends Phaser.Scene {
             .on("pointerdown", () => {
                 if (kid.x == 235) {
                     this.score += 2;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 380) {
                     this.score += 1;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 720) {
                     this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 800) {
                     this.score += 3;
-                    kid.setX(l4.x).setY(l4.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l4.x },
+                        y: { from: kid.y, to: l4.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);

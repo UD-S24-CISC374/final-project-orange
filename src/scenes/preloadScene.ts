@@ -22,6 +22,7 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.image("win", "assets/faces/glad.png");
         this.load.image("lose", "assets/faces/sad.png");
         this.load.audio("backgroundMusic", "assets/background.mp3");
+        this.load.audio("splash2", "assets/splash2.wav");
     }
 
     create() {
@@ -77,17 +78,21 @@ export default class PreloadScene extends Phaser.Scene {
                 fontStyle: "bold",
             }
         );
-        //const splash = this.sound.add("splash2", {loop: false});
+        const splash = this.sound.add("splash2", { loop: false });
         instructions
             .setInteractive()
             .on("pointerdown", () => {
                 this.showInstructionsPopup();
+                splash.play();
             })
             .on("pointerover", () => instructions.setScale(1.1))
             .on("pointerout", () => instructions.setScale(1));
         start
             .setInteractive()
-            .on("pointerdown", () => this.scene.start("Level1"))
+            .on("pointerdown", () => {
+                splash.play();
+                this.scene.start("Level1");
+            })
             .on("pointerover", () => start.setScale(1.1))
             .on("pointerout", () => start.setScale(1));
 

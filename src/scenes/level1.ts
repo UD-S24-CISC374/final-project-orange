@@ -1,6 +1,7 @@
 // import { Linter } from "eslint";
 import Phaser from "phaser";
 import Instructions from "../objects/instructions";
+
 export default class Level1 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
@@ -8,7 +9,7 @@ export default class Level1 extends Phaser.Scene {
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
     private hintPopup!: Phaser.GameObjects.Container;
-    private kid!: Phaser.GameObjects.Image;
+    private kid!: Phaser.GameObjects.Sprite;
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
     private instructions: Instructions;
@@ -22,6 +23,7 @@ export default class Level1 extends Phaser.Scene {
             this.cameras.main.height / 2,
             "frogBackground"
         );
+        const splash = this.sound.add("splash2", { loop: false });
 
         this.muteButton = this.add
             .text(this.cameras.main.width - 80, 100, "Mute", {
@@ -54,25 +56,30 @@ export default class Level1 extends Phaser.Scene {
         graphics.strokePath();
         // const splash = this.sound.add("splash2", { loop: false });
 
-        let kid = this.add.image(235, 415, "froghappy");
+        let kid = this.add.sprite(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
-                //splash.play();
+                splash.play();
                 if (kid.x == 500) {
                     this.score += 1;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
                 }
                 if (kid.x == 650) {
                     this.score += 2;
-                    kid.setX(mom.x + 10)
-                        .setY(mom.y + 10)
-                        .setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
                 if (this.score > 3) {
                     image.setTint(0xff0000);
@@ -83,6 +90,15 @@ export default class Level1 extends Phaser.Scene {
                 }
             });
         kid.setScale(1);
+        if (kid.x == mom.x) {
+            if (this.score > 3) {
+                image.setTint(0xff0000);
+                this.showFailPopup();
+            } else if (this.score == 3) {
+                image.setTint(0x00ff00);
+                this.showPassPopup();
+            }
+        }
 
         let l1 = this.add
             .image(500, 200, "lilypad")
@@ -90,14 +106,26 @@ export default class Level1 extends Phaser.Scene {
             .setAngle(100)
             .setInteractive()
             .on("pointerdown", () => {
+                this.tweens.add({
+                    targets: [kid],
+                    x: { from: kid.x, to: l1.x },
+                    y: { from: kid.y, to: l1.y },
+                    duration: 500,
+                });
+                splash.play();
+                kid.setDepth(1);
                 if (kid.x == 235) {
                     this.score += 2;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
                 if (kid.x == 650) {
                     this.hideHintPopup();
                     this.score += 3;
-                    kid.setX(l1.x).setY(l1.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l1.x },
+                        y: { from: kid.y, to: l1.y },
+                        duration: 500,
+                    });
                 }
 
                 console.log("click pad" + this.score);
@@ -114,12 +142,24 @@ export default class Level1 extends Phaser.Scene {
             .setDepth(0)
             .on("pointerdown", () => {
                 if (kid.x == 235) {
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
                     this.score += 3;
+                    splash.play();
+                    kid.setDepth(1);
                 }
                 if (kid.x == 500) {
                     this.score += 3;
-                    kid.setX(l2.x).setY(l2.y).setDepth(1);
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: l2.x },
+                        y: { from: kid.y, to: l2.y },
+                        duration: 500,
+                    });
                 }
                 ////////////////////////////////////////////
                 this.showHintPopup();
