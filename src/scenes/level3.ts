@@ -18,6 +18,8 @@ export default class Level3 extends Phaser.Scene {
     }
 
     create() {
+        const ribbit = this.sound.add("ribbit", { loop: false });
+
         const splash = this.sound.add("splash2", { loop: false });
         let image = this.add.image(
             this.cameras.main.width / 2,
@@ -59,7 +61,7 @@ export default class Level3 extends Phaser.Scene {
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
-                splash.play();
+                ribbit.play();
                 if (kid.x == 750) {
                     this.score += 2;
                     this.tweens.add({

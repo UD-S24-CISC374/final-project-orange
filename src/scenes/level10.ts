@@ -17,6 +17,8 @@ export default class Level10 extends Phaser.Scene {
     }
 
     create() {
+        const ribbit = this.sound.add("ribbit", { loop: false });
+
         const splash = this.sound.add("splash2", { loop: false });
         let image = this.add.image(
             this.cameras.main.width / 2,
@@ -93,7 +95,7 @@ export default class Level10 extends Phaser.Scene {
                         y: { from: kid.y, to: mom.y },
                         duration: 500,
                     });
-                    splash.play();
+                    ribbit.play();
                     kid.setDepth(1);
                 }
                 if (kid.x == 960) {
@@ -104,7 +106,7 @@ export default class Level10 extends Phaser.Scene {
                         y: { from: kid.y, to: mom.y },
                         duration: 500,
                     });
-                    splash.play();
+                    ribbit.play();
                     kid.setDepth(1);
                 }
                 this.scoreText?.setText("Path Length: " + this.score);

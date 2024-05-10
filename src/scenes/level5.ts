@@ -72,6 +72,7 @@ export default class Level5 extends Phaser.Scene {
         graphics.lineTo(1000, 150);
         graphics.lineTo(990, 400);
         graphics.strokePath();
+        const ribbit = this.sound.add("ribbit", { loop: false });
 
         let kid = this.add.image(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
@@ -97,7 +98,7 @@ export default class Level5 extends Phaser.Scene {
                         y: { from: kid.y, to: mom.y },
                         duration: 500,
                     });
-                    splash.play();
+                    ribbit.play();
                     kid.setDepth(1);
                 }
                 if (kid.x == 620) {
@@ -108,7 +109,7 @@ export default class Level5 extends Phaser.Scene {
                         y: { from: kid.y, to: mom.y },
                         duration: 500,
                     });
-                    splash.play();
+                    ribbit.play();
                     kid.setDepth(1);
                 }
                 this.scoreText?.setText("Path Length: " + this.score);
