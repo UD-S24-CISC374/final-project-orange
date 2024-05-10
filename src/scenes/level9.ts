@@ -114,12 +114,23 @@ export default class Level9 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
+                if (kid.x == 650) {
+                    this.score += 10;
+                    this.tweens.add({
+                        targets: [kid],
+                        x: { from: kid.x, to: mom.x },
+                        y: { from: kid.y, to: mom.y },
+                        duration: 500,
+                    });
+                    splash.play();
+                    kid.setDepth(1);
+                }
                 this.scoreText?.setText("Path Length: " + this.score);
-                if (this.score > 4) {
+                if (this.score > 13) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 }
-                if (this.score == 12) {
+                if (this.score == 13) {
                     image.setTint(0x00ff00);
                     this.showPassPopup();
                 }

@@ -91,7 +91,7 @@ export default class PreloadScene extends Phaser.Scene {
             .setInteractive()
             .on("pointerdown", () => {
                 splash.play();
-                this.scene.start("Level1");
+                this.scene.start("Level1"); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             })
             .on("pointerover", () => start.setScale(1.1))
             .on("pointerout", () => start.setScale(1));
