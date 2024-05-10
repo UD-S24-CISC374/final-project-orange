@@ -18,6 +18,7 @@ export default class Level8 extends Phaser.Scene {
     }
 
     create() {
+        const splash = this.sound.add("splash2", { loop: false });
         let image = this.add.image(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
