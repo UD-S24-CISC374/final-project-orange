@@ -128,7 +128,6 @@ export default class Level1 extends Phaser.Scene {
                     });
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l1.setScale(0.5))
@@ -164,7 +163,6 @@ export default class Level1 extends Phaser.Scene {
                 ////////////////////////////////////////////
                 this.showHintPopup();
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l2.setScale(0.5))

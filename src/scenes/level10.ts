@@ -97,7 +97,6 @@ export default class Level10 extends Phaser.Scene {
                         .setY(mom.y + 10)
                         .setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
                 if (this.score > 69) {
                     image.setTint(0xff0000);
@@ -129,7 +128,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l1.x).setY(l1.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l1.setScale(0.5))
@@ -158,7 +156,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l2.x).setY(l2.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l2.setScale(0.5))
@@ -183,7 +180,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l3.x).setY(l3.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l3.setScale(0.5))
@@ -216,7 +212,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l4.x).setY(l4.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l4.setScale(0.5))
@@ -249,7 +244,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l5.x).setY(l5.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l5.setScale(0.5))
@@ -274,7 +268,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l6.x).setY(l6.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l6.setScale(0.5))
@@ -303,7 +296,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l7.x).setY(l7.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l7.setScale(0.5))
@@ -332,7 +324,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l8.x).setY(l8.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l8.setScale(0.5))
@@ -357,7 +348,6 @@ export default class Level10 extends Phaser.Scene {
                     kid.setX(l9.x).setY(l9.y).setDepth(1);
                 }
 
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l9.setScale(0.5))

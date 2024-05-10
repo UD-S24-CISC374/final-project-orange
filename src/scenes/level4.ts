@@ -100,7 +100,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
                 if (this.score > 4) {
                     image.setTint(0xff0000);
@@ -152,7 +151,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l1.setScale(0.5))
@@ -208,7 +206,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l2.setScale(0.5))
@@ -253,7 +250,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l3.setScale(0.5))
@@ -319,7 +315,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l4.setScale(0.5))
@@ -363,7 +358,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => l5.setScale(0.5))
@@ -396,7 +390,6 @@ export default class Level4 extends Phaser.Scene {
                     splash.play();
                     kid.setDepth(1);
                 }
-                console.log("click pad" + this.score);
                 this.scoreText?.setText("Path Length: " + this.score);
             })
 
