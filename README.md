@@ -21,7 +21,7 @@ You are playing as the baby frog who starts each level in the bottom left corner
 
 # Screenshot
 
-![Screenshot of Level 1 of Cross The Pond] (/docs/large.png)
+![/docs/large.png] (/docs/large.png)
 
 # Gameplay Video
 
