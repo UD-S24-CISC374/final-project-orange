@@ -2,7 +2,7 @@
 
 ## Elevator Pitch
 
-This game is about a frog who is separated from its mother and is trying to find its way back to her. Frog will cross a pond with lily pads with numbers on them and will try to find the smallest possible path if all lilypad numbers are added up. There will be different levels with increasing difficulty.
+Cross The Pond is about a baby frog who is separated from its mother and is trying to find its way back to her. In order to do this, the baby frog will cross a pond by hopping on lily pads connected together. On the lines connecting each lilypad, there will be numbers. The goal of the game is for the baby frog to hop on the correct lilypads that make up the shortest path. The shortest path should be decided using Dijstra's graph searching algortihm. There are 10 different levels with increasing difficulty.
 
 ## Influences (Brief)
 
@@ -23,7 +23,7 @@ _Give a very high-level description of any core gameplay mechanics_
 -   Frog must move to the other side of the pond with the shortest path to complete a level.
 -   Child and mother frog will celebrate if united through the shortest path.
 -   Player frog will have to restart level if not the shortest path is taken.
--   After completing all the levels, you will see a thank you from the mom for reuniting her with the child frog.
+-   After completing all the levels, you will see a congratulations for reuniting the mom frog with the child frog.
 
 # Learning Aspects
 
@@ -43,7 +43,7 @@ Introductory Computer Science Students
 ## Target Contexts
 
 This would be assigned as practice after learning about Dijkstra’s algorithm.
-There will be some ribbet (frog noise) and splashing audio, so should be used outside of class.
+There will be some ribbet (frog noise), background music, and splashing audio, so should be used outside of class.
 
 ## Learning Objectives
 
@@ -103,23 +103,22 @@ You can click connecting lilypads to select them and create a path.
 
 # Rules
 
-You can restart levels with 5 tries on each level
-If you don’t select the shortest path, the frog will cry and lose 1 try.
-If you use up all 5 tries, you will have to restart the game.
+You can restart levels with unlimited tries on each level
+If you don’t select the shortest path, the frogs will be sad
 The correct answer will never be shown
 There is no time constraint
 
 # Objects/Entities
 
-There is a frog, a pong, lily pads, a path.
+There is a frog, a pond, lily pads, a path.
 
 ## Core Gameplay Mechanics (Detailed)
 
--   Navigation: Navigation involves guiding the frog through the pond by selecting lily pads to hop onto. Players control the frog's movement by selecting a lilypad to move the frog to it by clicking the mouse. Players must strategize their path through the pond to reach the mother frog while minimizing the total sum of numbers on the lily pads they hop on. This mechanic challenges players to think strategically about their route and make decisions that will lead them to go to the next level.
+-   Navigation: Navigation involves guiding the frog through the pond by selecting lily pads to hop onto. Players control the frog's movement by selecting a lilypad to move the frog to it by clicking the mouse. Players must strategize their path through the pond to reach the mother frog while minimizing the total sum of numbers on the lily pads paths they hop on. This mechanic challenges players to think strategically about their route and make decisions that will lead them to go to the next level.
 
--   Decision-making: Requiring players to look at the numbers on each lily pad and choose the path with the lowest total sum. As players progress through levels, they will have to make harder decisions with more challenges because the numbers will be higher on the lily pads,. Players must carefully consider their options and consider the consequences of their choices to find the shortest route. This encourages critical thinking and problem-solving skills as players navigate through the pond and make strategic decisions to progress towards the mother frog.
+-   Decision-making: Requiring players to look at the numbers on each lily pad and choose the path with the lowest total sum. As players progress through levels, they will have to make harder decisions with more challenges because there will be more lilypads and the numbers will be higher on the paths. Players must carefully consider their options and consider the consequences of their choices to find the shortest route. This encourages critical thinking and problem-solving skills as players navigate through the pond and make strategic decisions to progress towards the mother frog.
 
--   Feedback: Giving feedback is really important to the player experience in the frog game. We will be providing immediate feedback through visual, audio, and animation features. When players select an incorrect path, the frog responds with visual cues such as a crying face and 1 less try and a sad sound effect. When players choose the correct path, the frog displays a happy face and progresses towards the mother frog with a happy sound effect. This system helps players understand the consequences of their actions and learn from their mistakes.
+-   Feedback: Giving feedback is really important to the player experience in the frog game. We will be providing immediate feedback through visual, audio, text, and hints. When players select an incorrect path, the frog responds with visual cues such as a crying face. When players choose the correct path, the frog displays a happy face and progresses towards the mother frog. This system helps players understand the consequences of their actions and learn from their mistakes. In the beginning levels, there will be more feedback if you select the wrong path. If you fail a level, you get a hint.
 
 ## Feedback
 
@@ -127,10 +126,9 @@ _Explicitly describe what visual/audio/animation indicators there are that give 
 
 _Describe what longer-term feedback you detect and give that guides the player in their learning and lets them know how they are doing in regards to the learning objectives._
 
-Tries Remaining: A counter displays the number of tries remaining, giving players visual feedback on how many attempts they have left to find the shortest path.
-Level Completion: When the player completes a level, the mother frog has a happy face to show that the player can move on to the next level
-When you don’t select the shortest path the frog will cry and you will lose one try. When the frog cries the player will know that they have selected the wrong path. A sad sound will also play
-If the frog is reunited with their mother a happy face will show on the screen with a happy sound
+Level Completion: When the player completes a level, the mother frog has a happy face to show that the player can move on to the next level. A congratulatory message comes up as well.
+When you don’t select the shortest path the frog will show a sad face and you will get a hint.
+If the frog is reunited with their mother a happy face will show on the screen.
 
 # Story and Gameplay
 
@@ -140,13 +138,13 @@ _Briefly describe how the player will learn the gameplay mechanics. Avoid using 
 
 Before the player starts the game there will be a rules button that the player can click on and a screen will show up with short simple rules
 
-However if the player doesn’t click that the player will learn by visual cues and prompts. The player will quickly understand that if they do not select the shortest path the mother and the frog will be sad and have sad faces, indicating to the player that they made an incorrect choice. The immediate visual feedback helps players understand the importance of selecting the shortest path. The game will also provide audio feedback when the player advances to the next level or loses the level. This audio reminds the player of the visual feedback and emphasizes to the player that their choice was not correct. By seeing the reactions of the frogs and paying attention to the audio and visual cues, players will develop an understanding of the gameplay rules and mechanics.
+However if the player doesn’t click that the player will learn by visual cues and prompts. The player will quickly understand that if they do not select the shortest path, you have to replay the level and will get a hint to continue and the mother and the baby frog will be sad and have sad faces, indicating to the player that they made an incorrect choice. The immediate feedback helps players understand the importance of selecting the shortest path.
 
 ## Presentation of Content
 
 _Briefly describe how the player will be taught the core material they are meant to learn. Avoid using walls of text, since people will not read them. Think instead of natural ways of teaching material iteratively and slowly._
 
-The player will first start with easy levels where they can get a hang of the game. We will have a button describing the objective of the game to allow the player to understand why having the shortest path is really important. As players navigate the pond and make decisions, the game provides immediate feedback on the consequences of their actions. If players don’t select the shortest path, the frog will cry and it will allow the player to learn they aren’t playing the game right. This gradual increase in levels allows players to build upon their knowledge and skills. Players learn through trial and error. Players get 5 tries on each level so they will always have a second chance to correct their mistakes.
+The player will first start with easy levels where they can get a hang of the game. We will have a button describing the objective of the game to allow the player to understand why having the shortest path is really important. As players navigate the pond and make decisions, the game provides immediate feedback on the consequences of their actions. This gradual increase in levels allows players to build upon their knowledge and skills. Players learn through trial and error.
 
 ## Story (Brief) & ## Storyboarding
 
@@ -154,9 +152,9 @@ _The Summary or TL;DR version of below_
 
 _Go into as much detail as needs be to visually convey the Dynamics of your game. Be detailed. Create storyboards and freeze frame images that concisely capture important key elements of your game. You are strongly recommended to sketch pictures on paper and embed them here. Be sure make it clear how previously-described mechanics come through in the dynamics._
 
-The frog's happy expression and the highlighted lily pad provide visual cues indicating the correct path. The player faces a pond with lily pads numbered 3, 6, 2, and 5. By selecting lily pads with lower numbers, the player can minimize the total sum and progress towards winning the level. When the player selects an incorrect path, the frog displays a crying face and with a sad sound effect. The crying effect and the sound effect signal to the player that they need to rethink their strategy. Players learn through trial and error, experimenting with different paths and strategies to find the shortest route. Each attempt provides valuable feedback, allowing players to change their approach and improve their performance.
+The frog's happy expression and the highlighted lily pad provide visual cues indicating the correct path. The player faces a pond with lily pads numbered 3, 6, 2, and 5. By selecting lily pads with lower numbers, the player can minimize the total sum and progress towards winning the level. When the player selects an incorrect path, the frog displays a crying face. The red tint, sad frog faces, retry messgae, and hint let the player know that they need to rethink their strategy. Players learn through trial and error, experimenting with different paths and strategies to find the shortest route. Each attempt provides valuable feedback, allowing players to change their approach and improve their performance.
 
-![assets/BasicGameOutline.png](Basic Game Design)
+![Basic Game Design](assets/BasicGameOutline.png)
 
 # Assets Needed
 
@@ -173,20 +171,20 @@ The game's visuals will have vibrant colors, a pond with lots of plants like col
     -   Mother Frog: Needs to have a happy face when they are reuinted, needs to have a sad face when they are far apart
 -   Textures: N/A
 -   Environment Art/Textures:
-    -   Background: The background should be a sunny day with clouds and greenery
+    -   Background: The background is a pond
 
 ## Audio
 
 _Game region/phase/time are ways of designating a particularly important place in the game._
 
--   Music List (Ambient sound)
+-   Music List (Background Music)
     -   A calming sound game that represents a pond on a sunny day with birds chirping https://www.youtube.com/watch?v=9f-ZO_G2pBQ&ab_channel=OpticStream360
 
 _Game Interactions are things that trigger SFX, like character movement, hitting a spiky enemy, collecting a coin._
 
 -   Sound List (SFX)
-    -   _Win _: https://www.youtube.com/watch?v=oKSQF18keVU&ab_channel=KJJourney
-    -   _Lose_: https://www.youtube.com/watch?v=_asNhzXq72w&ab_channel=GamingSoundFX
+    -   Splash: https://opengameart.org/content/water-splashes
+    -   Ribbet: https://orangefreesounds.com/frog-sound-ribbit/#google_vignette
 
 # Metadata
 
