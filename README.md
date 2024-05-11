@@ -21,7 +21,7 @@ You are playing as the baby frog who starts each level in the bottom left corner
 
 # Screenshot
 
-![/docs/large.png] (/docs/large.png)
+![Screenshot of Level 1] (/docs/large.png)
 
 # Gameplay Video
 

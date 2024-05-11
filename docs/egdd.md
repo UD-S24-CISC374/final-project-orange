@@ -154,7 +154,7 @@ _Go into as much detail as needs be to visually convey the Dynamics of your game
 
 The frog's happy expression and the highlighted lily pad provide visual cues indicating the correct path. The player faces a pond with lily pads numbered 3, 6, 2, and 5. By selecting lily pads with lower numbers, the player can minimize the total sum and progress towards winning the level. When the player selects an incorrect path, the frog displays a crying face. The red tint, sad frog faces, retry messgae, and hint let the player know that they need to rethink their strategy. Players learn through trial and error, experimenting with different paths and strategies to find the shortest route. Each attempt provides valuable feedback, allowing players to change their approach and improve their performance.
 
-![Basic Game Design](assets/BasicGameOutline.png)
+![Basic Game Design](/docs/BasicGameOutline.png)
 
 # Assets Needed
 
