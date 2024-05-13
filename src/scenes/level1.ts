@@ -1,7 +1,7 @@
 // import { Linter } from "eslint";
 import Phaser from "phaser";
 import Instructions from "../objects/instructions";
-
+//import lilypad from "./lilypad";
 export default class Level1 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
@@ -13,6 +13,9 @@ export default class Level1 extends Phaser.Scene {
     private isMuted: boolean = true;
     private muteButton!: Phaser.GameObjects.Text;
     private instructions: Instructions;
+
+    private potentialSum: number = 0;
+
     constructor() {
         super({ key: "Level1" });
     }
@@ -25,7 +28,6 @@ export default class Level1 extends Phaser.Scene {
             "frogBackground"
         );
         const splash = this.sound.add("splash2", { loop: false });
-
         this.muteButton = this.add
             .text(this.cameras.main.width - 80, 100, "Mute", {
                 color: "#000",
@@ -58,6 +60,8 @@ export default class Level1 extends Phaser.Scene {
 
         let kid = this.add.sprite(235, 415, "froghappy");
         let mom = this.add.image(1000, 150, "froghappy");
+        //const pad = new lilypad(this, 400, 800, kid);
+
         mom.setScale(2)
             .setInteractive()
             .on("pointerdown", () => {
@@ -72,7 +76,8 @@ export default class Level1 extends Phaser.Scene {
                     });
                 }
                 if (kid.x == 650) {
-                    this.score += 2;
+                    this.score += this.potentialSum;
+
                     this.tweens.add({
                         targets: [kid],
                         x: { from: kid.x, to: mom.x },
@@ -112,14 +117,15 @@ export default class Level1 extends Phaser.Scene {
                     y: { from: kid.y, to: l1.y },
                     duration: 500,
                 });
-                splash.play();
-                kid.setDepth(1);
+
                 if (kid.x == 235) {
-                    this.score += 2;
+                    splash.play();
+                    kid.setDepth(1);
+                    this.score += this.potentialSum;
+                    this.hideHintPopup();
                 }
                 if (kid.x == 650) {
-                    this.hideHintPopup();
-                    this.score += 3;
+                    this.score += this.potentialSum;
                     this.tweens.add({
                         targets: [kid],
                         x: { from: kid.x, to: l1.x },
@@ -130,8 +136,28 @@ export default class Level1 extends Phaser.Scene {
 
                 this.scoreText?.setText("Path Length: " + this.score);
             })
-            .on("pointerover", () => l1.setScale(0.5))
-            .on("pointerout", () => l1.setScale(0.4));
+            .on("pointerover", () => {
+                if (kid.x === 235) {
+                    this.potentialSum += 2;
+                } else if (kid.x === 650) {
+                    this.potentialSum += 3;
+                }
+
+                l1.setScale(0.5);
+                this.scoreText?.setText(
+                    "Path Length: " + this.score + "(" + this.potentialSum + ")"
+                );
+            })
+            .on("pointerout", () => {
+                if (kid.x === 235) {
+                    this.potentialSum += 2;
+                } else if (kid.x === 650) {
+                    this.potentialSum += 3;
+                }
+
+                l1.setScale(0.4);
+                this.potentialSum -= 2;
+            });
 
         let l2 = this.add
             .image(650, 450, "lilypad")
@@ -241,6 +267,7 @@ export default class Level1 extends Phaser.Scene {
         });
         this.instructions = new Instructions(this, 100, 200);
     }
+
     private createFailPopup(): Phaser.GameObjects.Container {
         const background = this.add
             .rectangle(
