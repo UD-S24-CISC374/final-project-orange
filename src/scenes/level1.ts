@@ -76,7 +76,7 @@ export default class Level1 extends Phaser.Scene {
                     });
                 }
                 if (kid.x == 650) {
-                    this.score += this.potentialSum;
+                    this.score += 2;
 
                     this.tweens.add({
                         targets: [kid],
@@ -121,11 +121,11 @@ export default class Level1 extends Phaser.Scene {
                 if (kid.x == 235) {
                     splash.play();
                     kid.setDepth(1);
-                    this.score += this.potentialSum;
+                    this.score += 2;
                     this.hideHintPopup();
                 }
                 if (kid.x == 650) {
-                    this.score += this.potentialSum;
+                    this.score += 3;
                     this.tweens.add({
                         targets: [kid],
                         x: { from: kid.x, to: l1.x },
@@ -133,30 +133,13 @@ export default class Level1 extends Phaser.Scene {
                         duration: 500,
                     });
                 }
-
                 this.scoreText?.setText("Path Length: " + this.score);
             })
             .on("pointerover", () => {
-                if (kid.x === 235) {
-                    this.potentialSum += 2;
-                } else if (kid.x === 650) {
-                    this.potentialSum += 3;
-                }
-
                 l1.setScale(0.5);
-                this.scoreText?.setText(
-                    "Path Length: " + this.score + "(" + this.potentialSum + ")"
-                );
             })
             .on("pointerout", () => {
-                if (kid.x === 235) {
-                    this.potentialSum += 2;
-                } else if (kid.x === 650) {
-                    this.potentialSum += 3;
-                }
-
                 l1.setScale(0.4);
-                this.potentialSum -= 2;
             });
 
         let l2 = this.add
