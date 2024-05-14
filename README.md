@@ -25,7 +25,7 @@ You are playing as the baby frog who starts each level in the bottom left corner
 
 # Gameplay Video
 
-![Gameplay video](https://www.youtube.com/watch?v=jeApkqySH7k)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jeApkqySH7k?si=MiZa7RhVqmG7K_bz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Educational Game Design Document
 
