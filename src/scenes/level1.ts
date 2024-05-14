@@ -21,12 +21,12 @@ export default class Level1 extends Phaser.Scene {
     }
 
     create() {
-        const ribbit = this.sound.add("ribbit", { loop: false });
         let image = this.add.image(
             this.cameras.main.width / 2,
             this.cameras.main.height / 2,
             "frogBackground"
         );
+        const ribbit = this.sound.add("ribbit", { loop: false });
         const splash = this.sound.add("splash2", { loop: false });
         this.muteButton = this.add
             .text(this.cameras.main.width - 80, 100, "Mute", {
