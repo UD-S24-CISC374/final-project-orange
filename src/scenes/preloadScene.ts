@@ -36,6 +36,7 @@ export default class PreloadScene extends Phaser.Scene {
         );
         this.backgroundMusic = this.sound.add("backgroundMusic", {
             loop: true,
+            volume: 0.5,
         });
         this.backgroundMusic.play();
         this.muteButton = this.add
