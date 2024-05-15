@@ -732,6 +732,8 @@ export default class Level7 extends Phaser.Scene {
     }
     private showPassPopup(): void {
         this.passPopup.setVisible(true);
+        const reunite = this.sound.add("reuniting");
+        reunite.play();
     }
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
