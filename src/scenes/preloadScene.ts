@@ -24,6 +24,7 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.audio("backgroundMusic", "assets/background2.mp3");
         this.load.audio("splash2", "assets/splash2.wav");
         this.load.audio("ribbit", "assets/ribbit.mp3");
+        this.load.audio("reuniting", "assets/reuniting.mp3");
     }
 
     create() {

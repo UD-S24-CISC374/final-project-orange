@@ -335,6 +335,7 @@ export default class Level1 extends Phaser.Scene {
             "Congratulations! \n\nYou united the baby frog with its mother along the shortest path!\n\n" +
                 "Got the hang of it? Try something more challening!\n\n" +
                 "Let's hop to it!",
+
             {
                 color: "#000",
                 fontSize: "24px",
@@ -342,6 +343,7 @@ export default class Level1 extends Phaser.Scene {
                 wordWrap: { width: 350 },
             }
         );
+
         PassText.setOrigin(0.5);
         const closeButton = this.add.text(
             this.cameras.main.width / 2,
@@ -382,6 +384,8 @@ export default class Level1 extends Phaser.Scene {
     }
     private showPassPopup(): void {
         this.passPopup.setVisible(true);
+        const reunite = this.sound.add("reuniting");
+        reunite.play();
     }
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
