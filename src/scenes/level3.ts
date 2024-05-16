@@ -6,6 +6,8 @@ export default class Level3 extends Phaser.Scene {
     private cursors?: Phaser.Types.Input.Keyboard.CursorKeys;
     private score: number = 0;
     private scoreText?: Phaser.GameObjects.Text;
+    private hintPopup!: Phaser.GameObjects.Container;
+
     private failPopup!: Phaser.GameObjects.Container;
     private passPopup!: Phaser.GameObjects.Container;
     private kid!: Phaser.GameObjects.Image;
@@ -260,6 +262,7 @@ export default class Level3 extends Phaser.Scene {
                     kid.setDepth(1);
                 } else if (kid.x == 850) {
                     this.score += 5;
+
                     this.tweens.add({
                         targets: [kid],
                         x: { from: kid.x, to: l5.x },
@@ -431,6 +434,7 @@ export default class Level3 extends Phaser.Scene {
         popup.add(failText);
         popup.add(closeButton);
         popup.add(sadMom);
+
         popup.add(sadKid);
         return popup;
     }
@@ -510,6 +514,7 @@ export default class Level3 extends Phaser.Scene {
     private hidePassPopup(): void {
         this.passPopup.setVisible(false);
     }
+
     toggleMute() {
         this.isMuted = !this.isMuted;
         this.game.sound.mute = this.isMuted;

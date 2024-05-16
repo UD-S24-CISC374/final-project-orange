@@ -128,11 +128,11 @@ export default class Level9 extends Phaser.Scene {
                     kid.setDepth(1);
                 }
                 this.scoreText?.setText("Path Length: " + this.score);
-                if (this.score > 13) {
+                if (this.score > 12) {
                     image.setTint(0xff0000);
                     this.showFailPopup();
                 }
-                if (this.score == 13) {
+                if (this.score == 12) {
                     image.setTint(0x00ff00);
                     this.showPassPopup();
                 }
