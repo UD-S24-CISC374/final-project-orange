@@ -1,5 +1,15 @@
 import Phaser from "phaser";
-import MainScene from "./scenes/mainScene";
+import Level1 from "./scenes/level1";
+
+import Level2 from "./scenes/level2";
+import Level3 from "./scenes/level3";
+import Level4 from "./scenes/level4";
+import Level5 from "./scenes/level5";
+import Level6 from "./scenes/level6";
+import Level7 from "./scenes/level7";
+import Level8 from "./scenes/level8";
+import Level9 from "./scenes/level9";
+import Level10 from "./scenes/level10";
 import PreloadScene from "./scenes/preloadScene";
 
 const DEFAULT_WIDTH = 1280;
@@ -9,7 +19,7 @@ export const CONFIG = {
     title: "My Untitled Phaser 3 Game",
     version: "0.0.1",
     type: Phaser.AUTO,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fff",
     scale: {
         parent: "phaser-game",
         mode: Phaser.Scale.FIT,
@@ -17,7 +27,19 @@ export const CONFIG = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT,
     },
-    scene: [PreloadScene, MainScene],
+    scene: [
+        PreloadScene,
+        Level1,
+        Level2,
+        Level3,
+        Level4,
+        Level5,
+        Level6,
+        Level7,
+        Level8,
+        Level9,
+        Level10,
+    ],
     physics: {
         default: "arcade",
         arcade: {
